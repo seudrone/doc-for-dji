@@ -1,0 +1,24 @@
+﻿生成启动时间为 2016/3/29 19:55:43。
+     1>项目“F:\大疆\Guidance-SDK-master\Guidance-SDK-master\guidance_track\guidance_track\guidance_track.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在对“Release\guidance_track.unsuccessfulbuild”执行 Touch 任务。
+       ClCompile:
+         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I\build\include\ /I"F:\大疆\Guidance-SDK-master\Guidance-SDK-master\guidance_track\..\..\include" /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt camshiftDepth1.cpp /DWIN32 
+         camshiftDepth1.cpp
+     1>f:\大疆\guidance-sdk-master\guidance-sdk-master\guidance_track\guidance_track\DJI_guidance.h(176): warning C4305: “=”: 从“double”到“float”截断
+       Link:
+         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\大疆\Guidance-SDK-master\Guidance-SDK-master\guidance_track\bin\guidance_track.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:\build\x86\vc10\lib /LIBPATH:"F:\大疆\Guidance-SDK-master\Guidance-SDK-master\guidance_track\..\..\lib\2010\x86" DJI_guidance.lib opencv_calib3d2410.lib opencv_contrib2410.lib opencv_core2410.lib opencv_features2d2410.lib opencv_flann2410.lib opencv_gpu2410.lib opencv_highgui2410.lib opencv_imgproc2410.lib opencv_legacy2410.lib opencv_ml2410.lib opencv_nonfree2410.lib opencv_objdetect2410.lib opencv_photo2410.lib opencv_stitching2410.lib opencv_ts2410.lib opencv_video2410.lib opencv_videostab2410.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\guidance_track.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"F:\大疆\Guidance-SDK-master\Guidance-SDK-master\guidance_track\bin\guidance_track.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\大疆\Guidance-SDK-master\Guidance-SDK-master\guidance_track\bin\guidance_track.lib" /MACHINE:X86 Release\camshiftDepth1.obj
+         Release\DJI_utility.obj
+         正在生成代码
+         已完成代码的生成
+         guidance_track.vcxproj -> F:\大疆\Guidance-SDK-master\Guidance-SDK-master\guidance_track\bin\guidance_track.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"F:\大疆\Guidance-SDK-master\Guidance-SDK-master\guidance_track\bin\guidance_track.exe;#1" /manifest Release\guidance_track.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         正在删除文件“Release\guidance_track.unsuccessfulbuild”。
+         正在对“Release\guidance_track.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“F:\大疆\Guidance-SDK-master\Guidance-SDK-master\guidance_track\guidance_track\guidance_track.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:03.92
