@@ -1,0 +1,35 @@
+// polySurface324SG genrated by blender2ogre 0.6.0
+
+material polySurface324SG 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass polySurface324SG
+        {
+            ambient 0.5920000076293945 0.1679999977350235 0.1120000034570694 0.0
+            diffuse 0.47360001316070566 0.13440000019073484 0.0896000041007996 0.0
+            specular 0.07000000029802322 0.07000000029802322 0.07000000029802322 0.0 1.25
+            emissive 0.0 0.0 0.0 0.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+        }
+    }
+}

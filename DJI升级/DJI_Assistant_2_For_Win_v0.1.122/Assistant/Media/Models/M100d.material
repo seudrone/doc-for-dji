@@ -1,0 +1,11 @@
+material lambert4
+{
+    technique
+    {
+        pass
+        {
+            diffuse 0.149020 0.149020 0.149020
+        }
+    }
+}
+

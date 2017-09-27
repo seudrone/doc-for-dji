@@ -1,0 +1,300 @@
+{
+    "firm_path": [
+        {
+            "path": "C:\\Users\\itolfo2\\Desktop\\tttt\\ai900v2_0306_V3.1.5.6_20160102.enc",
+            "receiver": 0,
+            "receiver_index": 0
+        },
+        {
+            "path": "",
+            "receiver": 0,
+            "receiver_index": 1
+        },
+        {
+            "path": "",
+            "receiver": 0,
+            "receiver_index": 2
+        },
+        {
+            "path": "",
+            "receiver": 0,
+            "receiver_index": 3
+        },
+        {
+            "path": "",
+            "receiver": 0,
+            "receiver_index": 4
+        },
+        {
+            "path": "",
+            "receiver": 0,
+            "receiver_index": 5
+        },
+        {
+            "path": "",
+            "receiver": 0,
+            "receiver_index": 6
+        },
+        {
+            "path": "",
+            "receiver": 0,
+            "receiver_index": 7
+        },
+        {
+            "path": "C:\\Users\\itolfo2\\Desktop\\tttt\\ai900v2_0306_V3.1.5.6_20160102.enc",
+            "receiver": 3,
+            "receiver_index": 6
+        },
+        {
+            "path": "E:\\Share\\M100\\中心板\\wm610_0500_v3.0.6.2_20151201.bin",
+            "receiver": 5,
+            "receiver_index": 0
+        },
+        {
+            "path": "E:\\Share\\M100\\中心板\\wm610_0500_v3.0.6.2_20151201.bin",
+            "receiver": 5,
+            "receiver_index": 1
+        },
+        {
+            "path": "E:\\Share\\PM820\\PM820\\PM820_1100_V01.01.03.02_20151229.bin",
+            "receiver": 11,
+            "receiver_index": 0
+        },
+        {
+            "path": "",
+            "receiver": 11,
+            "receiver_index": 2
+        },
+        {
+            "path": "",
+            "receiver": 11,
+            "receiver_index": 5
+        },
+        {
+            "path": "",
+            "receiver": 12,
+            "receiver_index": 0
+        },
+        {
+            "path": "",
+            "receiver": 12,
+            "receiver_index": 1
+        },
+        {
+            "path": "",
+            "receiver": 12,
+            "receiver_index": 2
+        },
+        {
+            "path": "",
+            "receiver": 12,
+            "receiver_index": 3
+        },
+        {
+            "path": "",
+            "receiver": 25,
+            "receiver_index": 0
+        },
+        {
+            "path": "",
+            "receiver": 26,
+            "receiver_index": 0
+        },
+        {
+            "path": "",
+            "receiver": 26,
+            "receiver_index": 1
+        },
+        {
+            "path": "",
+            "receiver": 26,
+            "receiver_index": 2
+        },
+        {
+            "path": "E:\\Share\\RTK\\固件\\u-boot-2-gz.bin",
+            "receiver": 26,
+            "receiver_index": 6
+        },
+        {
+            "path": "E:\\Share\\RTK\\固件\\firmware.bin",
+            "receiver": 26,
+            "receiver_index": 7
+        }
+    ],
+    "upgrade_time": [
+        {
+            "firmware_time": 4693,
+            "firmware_type": 0,
+            "receiver": 3,
+            "receiver_index": 5
+        },
+        {
+            "firmware_time": 56233,
+            "firmware_type": 0,
+            "receiver": 3,
+            "receiver_index": 6
+        },
+        {
+            "firmware_time": 17640,
+            "firmware_type": 0,
+            "receiver": 4,
+            "receiver_index": 7
+        },
+        {
+            "firmware_time": 20760,
+            "firmware_type": 0,
+            "receiver": 5,
+            "receiver_index": 0
+        },
+        {
+            "firmware_time": 17842,
+            "firmware_type": 0,
+            "receiver": 5,
+            "receiver_index": 1
+        },
+        {
+            "firmware_time": 70468,
+            "firmware_type": 0,
+            "receiver": 8,
+            "receiver_index": 1
+        },
+        {
+            "firmware_time": 19467,
+            "firmware_type": 0,
+            "receiver": 9,
+            "receiver_index": 0
+        },
+        {
+            "firmware_time": 169,
+            "firmware_type": 0,
+            "receiver": 11,
+            "receiver_index": 0
+        },
+        {
+            "firmware_time": 92297,
+            "firmware_type": 0,
+            "receiver": 11,
+            "receiver_index": 1
+        },
+        {
+            "firmware_time": 94721,
+            "firmware_type": 0,
+            "receiver": 11,
+            "receiver_index": 2
+        },
+        {
+            "firmware_time": 90424,
+            "firmware_type": 0,
+            "receiver": 11,
+            "receiver_index": 3
+        },
+        {
+            "firmware_time": 91521,
+            "firmware_type": 0,
+            "receiver": 11,
+            "receiver_index": 4
+        },
+        {
+            "firmware_time": 90584,
+            "firmware_type": 0,
+            "receiver": 11,
+            "receiver_index": 5
+        },
+        {
+            "firmware_time": 93092,
+            "firmware_type": 0,
+            "receiver": 11,
+            "receiver_index": 6
+        },
+        {
+            "firmware_time": 25675,
+            "firmware_type": 0,
+            "receiver": 12,
+            "receiver_index": 0
+        },
+        {
+            "firmware_time": 24477,
+            "firmware_type": 0,
+            "receiver": 12,
+            "receiver_index": 1
+        },
+        {
+            "firmware_time": 24893,
+            "firmware_type": 0,
+            "receiver": 12,
+            "receiver_index": 2
+        },
+        {
+            "firmware_time": 24618,
+            "firmware_type": 0,
+            "receiver": 12,
+            "receiver_index": 3
+        },
+        {
+            "firmware_time": 25512,
+            "firmware_type": 0,
+            "receiver": 12,
+            "receiver_index": 4
+        },
+        {
+            "firmware_time": 25952,
+            "firmware_type": 0,
+            "receiver": 12,
+            "receiver_index": 5
+        },
+        {
+            "firmware_time": 14736,
+            "firmware_type": 0,
+            "receiver": 15,
+            "receiver_index": 1
+        },
+        {
+            "firmware_time": 149061,
+            "firmware_type": 0,
+            "receiver": 19,
+            "receiver_index": 0
+        },
+        {
+            "firmware_time": 16340,
+            "firmware_type": 0,
+            "receiver": 24,
+            "receiver_index": 0
+        },
+        {
+            "firmware_time": 14411,
+            "firmware_type": 0,
+            "receiver": 26,
+            "receiver_index": 0
+        },
+        {
+            "firmware_time": 10711,
+            "firmware_type": 0,
+            "receiver": 26,
+            "receiver_index": 1
+        },
+        {
+            "firmware_time": 10841,
+            "firmware_type": 0,
+            "receiver": 26,
+            "receiver_index": 2
+        },
+        {
+            "firmware_time": 48013,
+            "firmware_type": 0,
+            "receiver": 26,
+            "receiver_index": 6
+        },
+        {
+            "firmware_time": 16992,
+            "firmware_type": 0,
+            "receiver": 26,
+            "receiver_index": 7
+        },
+        {
+            "firmware_time": 19533,
+            "firmware_type": 0,
+            "receiver": 29,
+            "receiver_index": 0
+        }
+    ]
+}

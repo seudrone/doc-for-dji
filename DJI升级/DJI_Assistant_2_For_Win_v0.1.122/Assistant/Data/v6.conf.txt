@@ -1,0 +1,3365 @@
+
+[config]
+name	        ns_data_component
+type	        10086
+uint32_t	component_all
+
+expr	E_component_gnss_hp	bitand(shift_r(component_all,0),1)
+expr	E_component_gnss_hv	bitand(shift_r(component_all,1),1)
+expr	E_component_gnss_vp	bitand(shift_r(component_all,2),1)
+expr	E_component_gnss_vv	bitand(shift_r(component_all,3),1)
+expr	E_component_vodm_hp	bitand(shift_r(component_all,4),1)
+expr	E_component_vodm_hv	bitand(shift_r(component_all,5),1)
+expr	E_component_vodm_vp	bitand(shift_r(component_all,6),1)
+expr	E_component_vodm_vv	bitand(shift_r(component_all,7),1)
+expr	E_component_rtks_hp_p	bitand(shift_r(component_all,8),1)
+expr	E_component_rtks_hp_s	bitand(shift_r(component_all,9),1)
+expr	E_component_rtks_hv	bitand(shift_r(component_all,10),1)
+expr	E_component_rtks_vp_p	bitand(shift_r(component_all,11),1)
+expr	E_component_rtks_vp_s	bitand(shift_r(component_all,12),1)
+expr	E_component_rtks_vv	bitand(shift_r(component_all,13),1)
+expr	E_component_rtks_yaw	bitand(shift_r(component_all,14),1)
+expr	E_component_usnc_vp	bitand(shift_r(component_all,15),1)
+expr	E_component_baro_vp	bitand(shift_r(component_all,16),1)
+expr	E_component_magn_yaw	bitand(shift_r(component_all,17),1)
+expr	E_component_vodm_vh	bitand(shift_r(component_all,18),1)
+
+[config]
+name	        ns_data_posi_ofst
+type	        10088
+float	offset_gnss_hp_x
+float	offset_gnss_hp_y
+float	offset_gnss_vp_z
+float	offset_vodm_hp_x
+float	offset_vodm_hp_y
+float	offset_vodm_vp_z
+float	offset_rtks_hp_p_x
+float	offset_rtks_hp_p_y
+float	offset_rtks_hp_s_x
+float	offset_rtks_hp_s_y
+float	offset_rtks_vp_p_z
+float	offset_rtks_vp_s_z
+float	offset_rtks_yaw
+float	offset_usnc_vp_z
+float	offset_baro_vp_z
+float	offset_magn_yaw
+float	offset_vodm_vh_z
+
+[config]
+name	        ns_data_residuals
+type	        10087
+float	resd_gnss_hp_x
+float	resd_gnss_hp_y
+float	resd_gnss_hv_x
+float	resd_gnss_hv_y
+float	resd_gnss_vp_z
+float	resd_gnss_vv_z
+float	resd_vodm_hp_x
+float	resd_vodm_hp_y
+float	resd_vodm_hv_x
+float	resd_vodm_hv_y
+float	resd_vodm_vp_z
+float	resd_vodm_vv_z
+float	resd_rtks_hp_p_x
+float	resd_rtks_hp_p_y
+float	resd_rtks_hp_s_x
+float	resd_rtks_hp_s_y
+float	resd_rtks_hv_x
+float	resd_rtks_hv_y
+float	resd_rtks_vp_p_z
+float	resd_rtks_vp_s_z
+float	resd_rtks_vv_z
+float	resd_rtks_yaw
+float	resd_usnc_vp_z
+float	resd_baro_vp_z
+float	resd_magn_yaw
+float	resd_vodm_vh_z
+
+[config]
+name	        ns_sensor_connect
+type	        10089
+uint32_t	ns_sensor_connect_all
+
+expr	E_ns_sensor_connect_gnss		bitand(shift_r(ns_sensor_connect_all,0),1)
+expr	E_ns_sensor_connect_magn		bitand(shift_r(ns_sensor_connect_all,1),1)
+expr	E_ns_sensor_connect_usnc		bitand(shift_r(ns_sensor_connect_all,2),1)
+expr	E_ns_sensor_connect_vodm		bitand(shift_r(ns_sensor_connect_all,3),1)
+expr	E_ns_sensor_connect_rtks		bitand(shift_r(ns_sensor_connect_all,4),1)
+
+[config]
+name	        Controller
+type	        0
+uint32_t        g_real_clock
+int16_t	        g_real_input_channel_COMMAND_AILERON
+int16_t	        g_real_input_channel_COMMAND_ELEVATOR
+int16_t	        g_real_input_channel_COMMAND_THROTTLE
+int16_t	        g_real_input_channel_COMMAND_RUDDER
+int16_t	        g_real_input_channel_COMMAND_MODE
+int16_t	        g_real_input_channel_COMMAND_IOC
+int16_t	        g_real_input_channel_COMMAND_GO_HOME
+int16_t	        g_real_input_channel_COMMAND_D4
+int16_t 	g_real_input_control_core_pitch
+int16_t	        g_real_input_control_core_roll
+int16_t	        g_real_input_control_core_alti
+int16_t	        g_real_input_control_core_tail
+
+
+uint8_t	        g_real_status_cotrol_command_mode
+uint8_t	        g_real_status_control_real_mode
+uint8_t	        g_real_status_ioc_control_command_mode
+uint8_t	        g_real_status_rc_state
+uint8_t	        g_real_status_motor_status
+uint32	        imu_package_lost_count
+uint16_t        g_real_status_main_batery_voltage
+uint8_t         imu_temp_real_ctl_out_per
+uint8_t		us_fail_flag
+uint8_t		gps_signal_levels
+uint8_t					gps_ctrl_levels
+
+
+[config] 
+name      GPS_difference
+type      161
+float     dis_gps01
+float     dis_gps02
+float     dis_gps12
+
+
+[string]
+name            imulog1
+type            65381
+
+[string]
+name            imulog2
+type            65382
+
+[config]
+name      ofdm_cnt
+type      1999
+uint16_t  recv_total
+uint16_t  header_error
+uint16_t  v1_error
+uint16_t  v0_error
+uint16_t  seccuss
+
+
+[config]
+name      uart_cnt
+type      2000
+uint16_t  uart_tx1
+uint16_t  uart_rx1
+uint16_t  uart_tx2
+uint16_t  uart_rx2
+uint16_t  uart_tx3
+uint16_t  uart_rx3
+uint16_t  uart_tx4
+uint16_t  uart_rx4
+uint16_t  uart_tx5
+uint16_t  uart_rx5
+uint16_t  uart_tx6
+uint16_t  uart_rx6
+uint16_t  uart_tx7
+uint16_t  uart_rx7
+uint16_t  uart_tx8
+uint16_t  uart_rx8
+
+[config]
+name      IMU_TAIL
+type      2
+int16_t     raw_w_x
+int16_t     raw_w_y
+int16_t     raw_w_z
+int16_t     raw_a_x
+int16_t     raw_a_y
+int16_t     raw_a_z
+int16_t     raw_wa_x
+int16_t     raw_wa_y
+int16_t     raw_wa_z
+
+int16_t     iir_w_x
+int16_t     iir_w_y
+int16_t     iir_w_z
+int16_t     iir_a_x
+int16_t     iir_a_y
+int16_t     iir_a_z
+int16_t     iir_wa_x
+int16_t     iir_wa_y
+int16_t     iir_wa_z
+
+uint32_t	gyro_hf_cnt
+
+expr	E_raw_w_x 		raw_w_x/1000
+expr	E_raw_w_y 		raw_w_y/1000
+expr	E_raw_w_z 		raw_w_z/1000
+expr	E_raw_a_x 		raw_a_x/500
+expr	E_raw_a_y 		raw_a_y/500
+expr	E_raw_a_z 		raw_a_z/500
+expr	E_raw_wa_x		raw_wa_x/100
+expr	E_raw_wa_y		raw_wa_y/100
+expr	E_raw_wa_z		raw_wa_z/100
+
+expr	E_iir_w_x 		iir_w_x/1000
+expr	E_iir_w_y 		iir_w_y/1000
+expr	E_iir_w_z 		iir_w_z/1000
+expr	E_iir_a_x 		iir_a_x/500
+expr	E_iir_a_y 		iir_a_y/500
+expr	E_iir_a_z 		iir_a_z/500
+expr	E_iir_wa_x		iir_wa_x/100
+expr	E_iir_wa_y		iir_wa_y/100
+expr	E_iir_wa_z		iir_wa_z/100
+
+[string]
+name	        drv_log
+type			65530
+
+[config]
+name	        asr
+type	        115
+uint32_t	    lead
+
+[config]
+name	        IMU_ATTI
+type	        1
+double	        longti
+double	        lati
+float	        alti
+float	        acc_x
+float	        acc_y
+float	        acc_z
+float	        gyro_x
+float	        gyro_y
+float	        gyro_z
+float	        press
+float	        q0
+float	        q1
+float	        q2
+float	        q3
+float	        ag_x
+float	        ag_y
+float	        ag_z
+float	        vg_x
+float	        vg_y
+float	        vg_z
+float	        gb_x
+float	        gb_y
+float	        gb_z
+int16_t	        m_x
+int16_t 	m_y
+int16_t	        m_z
+int16_t	        temp_x
+int16_t	        temp_y
+int16_t	        temp_z
+uint16_t	sensor_monitor
+uint16_t	filter_status
+uint16_t	svn
+uint16_t	cnt_atti       
+
+[config]
+name	        IMU_EX
+type	        3
+float		vo_vx
+float		vo_vy
+float		vo_vz
+float   	vo_px
+float   	vo_py
+float   	vo_pz
+float	  	us_v
+float  		us_p
+uint16_t  	vo_flag_navi
+uint16_t  	imu_err_flag
+uint16_t  	vo_flag_rsv
+uint16_t  	imu_ex_cnt
+
+expr	E_vo_flag_navi_vo_vx   bitand(vo_flag_navi,1)
+expr	E_vo_flag_navi_vo_vy   bitand(shift_r(vo_flag_navi,1),1)
+expr	E_vo_flag_navi_vo_vz   bitand(shift_r(vo_flag_navi,2),1)
+expr	E_vo_flag_navi_vo_px   bitand(shift_r(vo_flag_navi,3),1)
+expr	E_vo_flag_navi_vo_py   bitand(shift_r(vo_flag_navi,4),1)
+expr	E_vo_flag_navi_vo_pz   bitand(shift_r(vo_flag_navi,5),1)
+expr	E_vo_flag_navi_us_vz  bitand(shift_r(vo_flag_navi,6),1)
+expr	E_vo_flag_navi_us_pz  bitand(shift_r(vo_flag_navi,7),1)
+
+expr    E_imu_err_vg_large      bitand(imu_err_flag,1)
+expr    E_imu_err_gps_yaw       bitand(shift_r(imu_err_flag,1),1)
+expr    E_imu_err_mag_yaw       bitand(shift_r(imu_err_flag,2),1)
+expr    E_imu_err_gps_consist   bitand(shift_r(imu_err_flag,3),1)
+expr    E_imu_err_us_fail       bitand(shift_r(imu_err_flag,4),1)
+expr    E_imu_init_ok_flag      bitand(shift_r(imu_err_flag,5),1)
+
+[config]
+name	        AttiMini
+type	        2208
+float     q0_AttiMini
+float     q1_AttiMini
+float     q2_AttiMini
+float     q3_AttiMini
+float     pgz_AttiMini
+float     vgz_AttiMini
+float     agz_AttiMini
+uint32_t  rsv_AttiMini1
+uint32_t  rsv_AttiMini2
+uint32_t  cnt_AttiMini
+
+expr	E_Mini_pitch_00	        -asin_x(2*(q1_AttiMini*q3_AttiMini-q0_AttiMini*q2_AttiMini))/3.1415926*180
+expr	E_Mini_roll_00	        atan2(2*(q2_AttiMini*q3_AttiMini+q0_AttiMini*q1_AttiMini),1-2*(q1_AttiMini*q1_AttiMini+q2_AttiMini*q2_AttiMini))/3.1415926*180
+expr	E_Mini_yaw_00	        atan2(2*(q1_AttiMini*q2_AttiMini+q0_AttiMini*q3_AttiMini),1-2*(q2_AttiMini*q2_AttiMini+q3_AttiMini*q3_AttiMini))/3.1415926*180
+[config]
+name      IMU_TAIL_00
+type      2080
+float     wa_x_00
+float     wa_y_00
+float     wa_z_00
+float     w_x_00
+float     w_y_00
+float     w_z_00
+float     a_x_00
+float     a_y_00
+float     a_z_00
+
+[config]
+name	        IMU_ATTI_00
+type	        2048
+double	        longti_00
+double	        lati_00
+float	        alti_00
+float	        acc_x_00
+float	        acc_y_00
+float	        acc_z_00
+float	        gyro_x_00
+float	        gyro_y_00
+float	        gyro_z_00
+float	        press_00
+float	        q0_00
+float	        q1_00
+float	        q2_00
+float	        q3_00
+float	        ag_x_00
+float	        ag_y_00
+float	        ag_z_00
+float	        vg_x_00
+float	        vg_y_00
+float	        vg_z_00
+float	        gb_x_00
+float	        gb_y_00
+float	        gb_z_00
+int16_t	        m_x_00
+int16_t 	        m_y_00
+int16_t	        m_z_00
+int16_t	        temp_x_00
+int16_t	        temp_y_00
+int16_t	        temp_z_00
+uint16_t	sensor_monitor_00
+uint16_t	filter_status_00
+uint16_t	svn_00
+uint16_t	cnt_atti_00
+
+expr	E_pitch_00	        -asin_x(2*(q1_00*q3_00-q0_00*q2_00))/3.1415926*180
+expr	E_roll_00	        atan2(2*(q2_00*q3_00+q0_00*q1_00),1-2*(q1_00*q1_00+q2_00*q2_00))/3.1415926*180
+expr	E_yaw_00	        atan2(2*(q1_00*q2_00+q0_00*q3_00),1-2*(q2_00*q2_00+q3_00*q3_00))/3.1415926*180
+expr	E_yaw_from_m_00	atan2(-(m_y_00*cos(E_roll_00/57.29578)-m_z_00*sin(E_roll_00/57.29578)),m_x_00*cos(E_pitch_00/57.29578)+m_y_00*sin(E_pitch_00/57.29578)*sin(E_roll_00/57.29578)+m_z_00*sin(E_pitch_00/57.29578)*cos(E_roll_00/57.29578))*180/3.14159265       
+expr    E_gyro_mode_00            sqrt(gyro_x_00^2+gyro_y_00^2+gyro_z_00^2)
+expr    E_acc_mode_00             sqrt(acc_x_00^2 +acc_y_00^2 +acc_z_00^2)
+
+[config]
+name	        IMU_EX_00
+type	        2064
+float		vo_vx_00
+float		vo_vy_00
+float		vo_vz_00
+float   	vo_px_00
+float   	vo_py_00
+float   	vo_pz_00
+float	  	us_v_00
+float  		us_p_00
+uint16_t  	vo_flag_navi_00
+uint16_t  	imu_err_flag_00
+uint16_t  	vo_flag_rsv_00
+uint16_t  	imu_ex_cnt_00
+
+
+expr	E_vo_flag_navi_vo_vx_00   bitand(vo_flag_navi_00,1)
+expr	E_vo_flag_navi_vo_vy_00   bitand(shift_r(vo_flag_navi_00,1),1)
+expr	E_vo_flag_navi_vo_vz_00   bitand(shift_r(vo_flag_navi_00,2),1)
+expr	E_vo_flag_navi_vo_px_00   bitand(shift_r(vo_flag_navi_00,3),1)
+expr	E_vo_flag_navi_vo_py_00   bitand(shift_r(vo_flag_navi_00,4),1)
+expr	E_vo_flag_navi_vo_pz_00   bitand(shift_r(vo_flag_navi_00,5),1)
+expr	E_vo_flag_navi_us_vz_00  bitand(shift_r(vo_flag_navi_00,6),1)
+expr	E_vo_flag_navi_us_pz_00   bitand(shift_r(vo_flag_navi_00,7),1)
+
+expr    E_imu_err_vg_large_00      bitand(imu_err_flag_00,1)
+expr    E_imu_err_gps_yaw_00       bitand(shift_r(imu_err_flag_00,1),1)
+expr    E_imu_err_mag_yaw_00       bitand(shift_r(imu_err_flag_00,2),1)
+expr    E_imu_err_gps_consist_00  bitand(shift_r(imu_err_flag_00,3),1)
+expr    E_imu_err_us_fail_00       bitand(shift_r(imu_err_flag_00,4),1)
+expr    E_imu_err_init_ok_00      bitand(shift_r(imu_err_flag_00,5),1)
+
+[config]
+name      IMU_TAIL_01
+type      2081
+float     wa_x_01
+float     wa_y_01
+float     wa_z_01
+float     w_x_01
+float     w_y_01
+float     w_z_01
+float     a_x_01
+float     a_y_01
+float     a_z_01
+
+
+[config]
+name	        IMU_ATTI_01
+type	        2049
+double	        longti_01
+double	        lati_01
+float	        alti_01
+float	        acc_x_01
+float	        acc_y_01
+float	        acc_z_01
+float	        gyro_x_01
+float	        gyro_y_01
+float	        gyro_z_01
+float	        press_01
+float	        q0_01
+float	        q1_01
+float	        q2_01
+float	        q3_01
+float	        ag_x_01
+float	        ag_y_01
+float	        ag_z_01
+float	        vg_x_01
+float	        vg_y_01
+float	        vg_z_01
+float	        gb_x_01
+float	        gb_y_01
+float	        gb_z_01
+int16_t	        m_x_01
+int16_t 	m_y_01
+int16_t	        m_z_01
+int16_t	        temp_x_01
+int16_t	        temp_y_01
+int16_t	        temp_z_01
+uint16_t	sensor_monitor_01
+uint16_t	filter_status_01
+uint16_t	svn_01
+uint16_t	cnt_atti_01 
+
+expr	E_pitch_01	        -asin_x(2*(q1_01*q3_01-q0_01*q2_01))/3.1415926*180
+expr	E_roll_01	        atan2(2*(q2_01*q3_01+q0_01*q1_01),1-2*(q1_01*q1_01+q2_01*q2_01))/3.1415926*180
+expr	E_yaw_01	        atan2(2*(q1_01*q2_01+q0_01*q3_01),1-2*(q2_01*q2_01+q3_01*q3_01))/3.1415926*180
+expr	E_yaw_from_m_01	atan2(-(m_y_01*cos(E_roll_01/57.29578)-m_z_01*sin(E_roll_01/57.29578)),m_x_01*cos(E_pitch_01/57.29578)+m_y_01*sin(E_pitch_01/57.29578)*sin(E_roll_01/57.29578)+m_z_01*sin(E_pitch_01/57.29578)*cos(E_roll_01/57.29578))*180/3.14159265      
+expr    E_gyro_mode_01            sqrt(gyro_x_01^2+gyro_y_01^2+gyro_z_01^2)
+expr    E_acc_mode_01             sqrt(acc_x_01^2 +acc_y_01^2 +acc_z_01^2)
+
+[config]
+name	        IMU_EX_01
+type	        2065
+float		vo_vx_01
+float		vo_vy_01
+float		vo_vz_01
+float   	vo_px_01
+float   	vo_py_01
+float   	vo_pz_01
+float	  	us_v_01
+float  		us_p_01
+uint16_t  	vo_flag_navi_01
+uint16_t  	imu_err_flag_01
+uint16_t  	vo_flag_rsv_01
+uint16_t  	imu_ex_cnt_01
+
+
+expr	E_vo_flag_navi_vo_vx_01   bitand(vo_flag_navi_01,1)
+expr	E_vo_flag_navi_vo_vy_01   bitand(shift_r(vo_flag_navi_01,1),1)
+expr	E_vo_flag_navi_vo_vz_01   bitand(shift_r(vo_flag_navi_01,2),1)
+expr	E_vo_flag_navi_vo_px_01   bitand(shift_r(vo_flag_navi_01,3),1)
+expr	E_vo_flag_navi_vo_py_01   bitand(shift_r(vo_flag_navi_01,4),1)
+expr	E_vo_flag_navi_vo_pz_01  bitand(shift_r(vo_flag_navi_01,5),1)
+expr	E_vo_flag_navi_us_vz_01   bitand(shift_r(vo_flag_navi_01,6),1)
+expr	E_vo_flag_navi_us_pz_01   bitand(shift_r(vo_flag_navi_01,7),1)
+
+expr    E_imu_err_vg_large_01      bitand(imu_err_flag_01,1)
+expr    E_imu_err_gps_yaw_01       bitand(shift_r(imu_err_flag_01,1),1)
+expr    E_imu_err_mag_yaw_01       bitand(shift_r(imu_err_flag_01,2),1)
+expr    E_imu_err_gps_consist_01   bitand(shift_r(imu_err_flag_01,3),1)
+expr    E_imu_err_us_fail_01      bitand(shift_r(imu_err_flag_01,4),1)
+expr    E_imu_err_init_ok_01       bitand(shift_r(imu_err_flag_01,5),1)
+
+[config]
+name      IMU_TAIL_02
+type      2082
+float     wa_x_02
+float     wa_y_02
+float     wa_z_02
+float     w_x_02
+float     w_y_02
+float     w_z_02
+float     a_x_02
+float     a_y_02
+float     a_z_02
+
+	
+[config]
+name	        IMU_ATTI_02
+type	        2050
+double	        longtiI_02
+double	        latiI_02
+float	        altiI_02
+float	        acc_x_02
+float	        acc_y_02
+float	        acc_z_02
+float	        gyro_x_02
+float	        gyro_y_02
+float	        gyro_z_02
+float	        press_02
+float	        q0_02
+float	        q1_02
+float	        q2_02
+float	        q3_02
+float	        ag_x_02
+float	        ag_y_02
+float	        ag_z_02
+float	        vg_x_02
+float	        vg_y_02
+float	        vg_z_02
+float	        gb_x_02
+float	        gb_y_02
+float	        gb_z_02
+int16_t	        m_x_02
+int16_t 	m_y_02
+int16_t	        m_z_02
+int16_t	        temp_x_02
+int16_t	        temp_y_02
+int16_t	        temp_z_02
+uint16_t	sensor_monitor_02
+uint16_t	filter_status_02
+uint16_t	svn_02
+uint16_t	cnt_atti_02 
+
+expr	E_pitch_02	        -asin_x(2*(q1_02*q3_02-q0_02*q2_02))/3.1415926*180
+expr	E_roll_02	        atan2(2*(q2_02*q3_02+q0_02*q1_02),1-2*(q1_02*q1_02+q2_02*q2_02))/3.1415926*180
+expr	E_yaw_02	        atan2(2*(q1_02*q2_02+q0_02*q3_02),1-2*(q2_02*q2_02+q3_02*q3_02))/3.1415926*180
+expr	E_yaw_from_m_02	atan2(-(m_y_02*cos(E_roll_02/57.29578)-m_z_02*sin(E_roll_02/57.29578)),m_x_02*cos(E_pitch_02/57.29578)+m_y_02*sin(E_pitch_02/57.29578)*sin(E_roll_02/57.29578)+m_z_02*sin(E_pitch_02/57.29578)*cos(E_roll_02/57.29578))*180/3.14159265
+expr    E_gyro_mode_02            sqrt(gyro_x_02^2+gyro_y_02^2+gyro_z_02^2)
+expr    E_acc_mode_02             sqrt(acc_x_02^2 +acc_y_02^2 +acc_z_02^2)     
+
+[config]
+name	        IMU_EX_02
+type	        2066
+float		vo_vx_02
+float		vo_vy_02
+float		vo_vz_02
+float   	vo_px_02
+float   	vo_py_02
+float   	vo_pz_02
+float	  	us_v_02
+float  		us_p_02
+uint16_t  	vo_flag_navi_02
+uint16_t  	imu_err_flag_02
+uint16_t  	vo_flag_rsv_02
+uint16_t  	imu_ex_cnt_02
+
+
+
+
+
+expr	E_vo_flag_navi_vo_vx_02   bitand(vo_flag_navi_02,1)
+expr	E_vo_flag_navi_vo_vy_02   bitand(shift_r(vo_flag_navi_02,1),1)
+expr	E_vo_flag_navi_vo_vz_02   bitand(shift_r(vo_flag_navi_02,2),1)
+expr	E_vo_flag_navi_vo_px_02   bitand(shift_r(vo_flag_navi_02,3),1)
+expr	E_vo_flag_navi_vo_py_02   bitand(shift_r(vo_flag_navi_02,4),1)
+expr	E_vo_flag_navi_vo_pz_02   bitand(shift_r(vo_flag_navi_02,5),1)
+expr	E_vo_flag_navi_us_vz_02   bitand(shift_r(vo_flag_navi_02,6),1)
+expr	E_vo_flag_navi_us_pz_02   bitand(shift_r(vo_flag_navi_02,7),1)
+
+expr    E_imu_err_vg_large_02      bitand(imu_err_flag_02,1)
+expr    E_imu_err_gps_yaw_02       bitand(shift_r(imu_err_flag_02,1),1)
+expr    E_imu_err_mag_yaw_02      bitand(shift_r(imu_err_flag_02,2),1)
+expr    E_imu_err_gps_consist_02   bitand(shift_r(imu_err_flag_02,3),1)
+expr    E_imu_err_us_fail_02       bitand(shift_r(imu_err_flag_02,4),1)
+expr    E_imu_err_init_ok_02      bitand(shift_r(imu_err_flag_02,5),1)
+
+
+[config]
+name          compass
+type	        4
+int16_t         magx
+int16_t         magy
+int16_t         magz
+uint16_t        mag_cnt
+
+[config]
+name          compass_cali_data_00
+type	        2256
+int16_t         cali_magx_00
+int16_t         cali_magy_00
+int16_t         cali_magz_00
+uint16_t        cali_mag_cnt_00
+expr	        E_yaw_cali_magxy_00   atan2(-cali_magy_00,cali_magx_00)*57.29578
+expr            magn_mod_00           sqrt(cali_magx_00*cali_magx_00+cali_magy_00*cali_magy_00+cali_magz_00*cali_magz_00)
+
+[config]
+name          compass_cali_data_01
+type	        2257
+int16_t         cali_magx_01
+int16_t         cali_magy_01
+int16_t         cali_magz_01
+uint16_t        cali_mag_cnt_01
+expr	        E_yaw_cali_magxy_01   atan2(-cali_magy_01,cali_magx_01)*57.29578
+expr            magn_mod_01           sqrt(cali_magx_01*cali_magx_01+cali_magy_01*cali_magy_01+cali_magz_01*cali_magz_01)
+
+[config]
+name          compass_cali_data_02
+type	        2258
+int16_t         cali_magx_02
+int16_t         cali_magy_02
+int16_t         cali_magz_02
+uint16_t        cali_mag_cnt_02
+expr	        E_yaw_cali_magxy_02   atan2(-cali_magy_02,cali_magx_02)*57.29578
+expr            magn_mod_02           sqrt(cali_magx_02*cali_magx_02+cali_magy_02*cali_magy_02+cali_magz_02*cali_magz_02)
+
+[config]
+name          compass_config_00
+type	        2240
+float bias_x_00
+float bias_y_00
+float bias_z_00
+float scale_x_00
+float scale_y_00
+float scale_z_00
+
+[config]
+name          compass_config_01
+type	        2241
+float bias_x_01
+float bias_y_01
+float bias_z_01
+float scale_x_01
+float scale_y_01
+float scale_z_01
+
+[config]
+name          compass_config_02
+type	        2242
+float bias_x_02
+float bias_y_02
+float bias_z_02
+float scale_x_02
+float scale_y_02
+float scale_z_02
+
+
+[config]
+name          compass_cali_status_00
+type	        2224
+uint8_t   req_start_cali_00
+uint8_t   req_exit_cali_00
+uint8_t   cali_step_00
+
+[config]
+name          compass_cali_status_01
+type	        2225
+uint8_t   req_start_cali_01
+uint8_t   req_exit_cali_01
+uint8_t   cali_step_01
+
+[config]
+name          compass_cali_status_02
+type	        2226
+uint8_t   req_start_cali_02
+uint8_t   req_exit_cali_02
+uint8_t   cali_step_02
+
+[config]
+name          raw_compass_00
+type	        2128
+int16_t         magx_00
+int16_t         magy_00
+int16_t         magz_00
+uint16_t        mag_cnt_00
+
+[config]
+name          raw_compass_01
+type	        2129
+int16_t         magx_01
+int16_t         magy_01
+int16_t         magz_01
+uint16_t        mag_cnt_01
+
+[config]
+name          raw_compass_02
+type	        2130
+int16_t         magx_02
+int16_t         magy_02
+int16_t         magz_02
+uint16_t        mag_cnt_02
+
+[config]
+name	        GPS_GLNS_00
+type	        2096
+uint32_t        gps_date_00
+uint32_t        gps_time_00
+int32_t         gps_lon_00
+int32_t         gps_lat_00
+int32_t         hmsl_00
+float	        Vel_N_00
+float	        Vel_E_00
+float	        Vel_D_00	
+float	        hdop_00
+float	        pdop_00
+float	        gps_fix_00
+float	        gnss_flag_00
+float	        hacc_00
+float	        sacc_00
+uint32_t        gps_used_00
+uint32_t        gln_used_00
+uint16_t        numsv_00
+uint16_t        gpsstate_00
+
+[config]
+name	        GPS_GLNS_01
+type	        2097
+uint32_t        gps_date_01
+uint32_t        gps_time_01
+int32_t         gps_lon_01
+int32_t         gps_lat_01
+int32_t         hmsl_01
+float	        Vel_N_01
+float	        Vel_E_01
+float	        Vel_D_01	
+float	        hdop_01
+float	        pdop_01
+float	        gps_fix_01
+float	        gnss_flag_01
+float	        hacc_01
+float	        sacc_01
+uint32_t        gps_used_01
+uint32_t        gln_used_01
+uint16_t        numsv_01
+uint16_t        gpsstate_01
+
+
+[config]
+name	        GPS_GLNS_02
+type	        2098
+uint32_t        gps_date_02
+uint32_t        gps_time_02
+int32_t         gps_lon_02
+int32_t         gps_lat_02
+int32_t         hmsl_02
+float	        Vel_N_02
+float	        Vel_E_02
+float	        Vel_D_02	
+float	        hdop_02
+float	        pdop_02
+float	        gps_fix_02
+float	        gnss_flag_02
+float	        hacc_02
+float	        sacc_02
+uint32_t        gps_used_02
+uint32_t        gln_used_02
+uint16_t        numsv_02
+uint16_t        gpsstate_02
+
+
+[config]
+name	        GPS_GLNS
+type	        5
+uint32_t        gps_date
+uint32_t        gps_time
+int32_t         gps_lon
+int32_t         gps_lat
+int32_t         hmsl
+float	        Vel_N
+float	        Vel_E
+float	        Vel_D	
+float	        hdop
+float	        pdop
+float	        gps_fix
+float	        gnss_flag
+float	        hacc
+float	        sacc
+uint32_t        gps_used
+uint32_t        gln_used
+uint16_t        numsv
+uint16_t        gpsstate
+
+[config]
+name            GPS_SNR
+type            11
+uint8_t	        gps_snr1
+uint8_t	        gps_snr2
+uint8_t	        gps_snr3
+uint8_t	        gps_snr4
+uint8_t	        gps_snr5
+uint8_t	        gps_snr6
+uint8_t	        gps_snr7
+uint8_t	        gps_snr8
+uint8_t	        gps_snr9
+uint8_t	        gps_snr10
+uint8_t	        gps_snr11
+uint8_t	        gps_snr12
+uint8_t	        gps_snr13
+uint8_t	        gps_snr14
+uint8_t		gps_snr15
+uint8_t		gps_snr16
+uint8_t		gps_snr17
+uint8_t		gps_snr18
+uint8_t		gps_snr19
+uint8_t		gps_snr20
+uint8_t		gps_snr21
+uint8_t		gps_snr22
+uint8_t		gps_snr23
+uint8_t		gps_snr24
+uint8_t		gps_snr25
+uint8_t		gps_snr26
+uint8_t		gps_snr27
+uint8_t		gps_snr28
+uint8_t		gps_snr29
+uint8_t		gps_snr30
+uint8_t		gps_snr31
+uint8_t		gps_snr32
+uint8_t		gln_snr1
+uint8_t		gln_snr2
+uint8_t		gln_snr3
+uint8_t		gln_snr4
+uint8_t		gln_snr5
+uint8_t		gln_snr6
+uint8_t		gln_snr7
+uint8_t		gln_snr8
+uint8_t		gln_snr9
+uint8_t		gln_snr10
+uint8_t		gln_snr11
+uint8_t		gln_snr12
+uint8_t		gln_snr13
+uint8_t		gln_snr14
+uint8_t		gln_snr15
+uint8_t		gln_snr16
+uint8_t		gln_snr17
+uint8_t		gln_snr18
+uint8_t		gln_snr19
+uint8_t		gln_snr20
+uint8_t		gln_snr21
+uint8_t		gln_snr22
+uint8_t		gln_snr23
+uint8_t		gln_snr24
+uint8_t		gln_snr25
+uint8_t		gln_snr26
+uint8_t		gln_snr27
+uint8_t		gln_snr28
+uint8_t		gln_snr29
+uint8_t		gln_snr30
+uint8_t		gln_snr31
+uint8_t		gln_snr32
+uint8_t	        gln_cnt
+
+[config]
+name            PT3_GPS_SNR
+type            97
+uint8_t	        pt3_gps_snr1
+uint8_t	        pt3_gps_snr2
+uint8_t	        pt3_gps_snr3
+uint8_t	        pt3_gps_snr4
+uint8_t	        pt3_gps_snr5
+uint8_t	        pt3_gps_snr6
+uint8_t	        pt3_gps_snr7
+uint8_t	        pt3_gps_snr8
+uint8_t	        pt3_gps_snr9
+uint8_t	        pt3_gps_snr10
+uint8_t	        pt3_gps_snr11
+uint8_t	        pt3_gps_snr12
+uint8_t	        pt3_gps_snr13
+uint8_t	        pt3_gps_snr14
+uint8_t		pt3_gps_snr15
+uint8_t		pt3_gps_snr16
+uint8_t		pt3_gps_snr17
+uint8_t		pt3_gps_snr18
+uint8_t		pt3_gps_snr19
+uint8_t		pt3_gps_snr20
+uint8_t		pt3_gps_snr21
+uint8_t		pt3_gps_snr22
+uint8_t		pt3_gps_snr23
+uint8_t		pt3_gps_snr24
+uint8_t		pt3_gps_snr25
+uint8_t		pt3_gps_snr26
+uint8_t		pt3_gps_snr27
+uint8_t		pt3_gps_snr28
+uint8_t		pt3_gps_snr29
+uint8_t		pt3_gps_snr30
+uint8_t		pt3_gps_snr31
+uint8_t		pt3_gps_snr32
+uint8_t		pt3_gln_snr1
+uint8_t		pt3_gln_snr2
+uint8_t		pt3_gln_snr3
+uint8_t		pt3_gln_snr4
+uint8_t		pt3_gln_snr5
+uint8_t		pt3_gln_snr6
+uint8_t		pt3_gln_snr7
+uint8_t		pt3_gln_snr8
+uint8_t		pt3_gln_snr9
+uint8_t		pt3_gln_snr10
+uint8_t		pt3_gln_snr11
+uint8_t		pt3_gln_snr12
+uint8_t		pt3_gln_snr13
+uint8_t		pt3_gln_snr14
+uint8_t		pt3_gln_snr15
+uint8_t		pt3_gln_snr16
+uint8_t		pt3_gln_snr17
+uint8_t		pt3_gln_snr18
+uint8_t		pt3_gln_snr19
+uint8_t		pt3_gln_snr20
+uint8_t		pt3_gln_snr21
+uint8_t		pt3_gln_snr22
+uint8_t		pt3_gln_snr23
+uint8_t		pt3_gln_snr24
+uint8_t		pt3_gln_snr25
+uint8_t		pt3_gln_snr26
+uint8_t		pt3_gln_snr27
+uint8_t		pt3_gln_snr28
+uint8_t		pt3_gln_snr29
+uint8_t		pt3_gln_snr30
+uint8_t		pt3_gln_snr31
+uint8_t		pt3_gln_snr32
+uint8_t	pt3_gln_cnt
+
+[config]
+name            PT3/4_GPS_SNR
+type            2112
+uint8_t	        pt4_gps_snr1
+uint8_t	        pt4_gps_snr2
+uint8_t	        pt4_gps_snr3
+uint8_t	        pt4_gps_snr4
+uint8_t	        pt4_gps_snr5
+uint8_t	        pt4_gps_snr6
+uint8_t	        pt4_gps_snr7
+uint8_t	        pt4_gps_snr8
+uint8_t	        pt4_gps_snr9
+uint8_t	        pt4_gps_snr10
+uint8_t	        pt4_gps_snr11
+uint8_t	        pt4_gps_snr12
+uint8_t	        pt4_gps_snr13
+uint8_t	        pt4_gps_snr14
+uint8_t		pt4_gps_snr15
+uint8_t		pt4_gps_snr16
+uint8_t		pt4_gps_snr17
+uint8_t		pt4_gps_snr18
+uint8_t		pt4_gps_snr19
+uint8_t		pt4_gps_snr20
+uint8_t		pt4_gps_snr21
+uint8_t		pt4_gps_snr22
+uint8_t		pt4_gps_snr23
+uint8_t		pt4_gps_snr24
+uint8_t		pt4_gps_snr25
+uint8_t		pt4_gps_snr26
+uint8_t		pt4_gps_snr27
+uint8_t		pt4_gps_snr28
+uint8_t		pt4_gps_snr29
+uint8_t		pt4_gps_snr30
+uint8_t		pt4_gps_snr31
+uint8_t		pt4_gps_snr32
+uint8_t		pt4_gln_snr1
+uint8_t		pt4_gln_snr2
+uint8_t		pt4_gln_snr3
+uint8_t		pt4_gln_snr4
+uint8_t		pt4_gln_snr5
+uint8_t		pt4_gln_snr6
+uint8_t		pt4_gln_snr7
+uint8_t		pt4_gln_snr8
+uint8_t		pt4_gln_snr9
+uint8_t		pt4_gln_snr10
+uint8_t		pt4_gln_snr11
+uint8_t		pt4_gln_snr12
+uint8_t		pt4_gln_snr13
+uint8_t		pt4_gln_snr14
+uint8_t		pt4_gln_snr15
+uint8_t		pt4_gln_snr16
+uint8_t		pt4_gln_snr17
+uint8_t		pt4_gln_snr18
+uint8_t		pt4_gln_snr19
+uint8_t		pt4_gln_snr20
+uint8_t		pt4_gln_snr21
+uint8_t		pt4_gln_snr22
+uint8_t		pt4_gln_snr23
+uint8_t		pt4_gln_snr24
+uint8_t		pt4_gln_snr25
+uint8_t		pt4_gln_snr26
+uint8_t		pt4_gln_snr27
+uint8_t		pt4_gln_snr28
+uint8_t		pt4_gln_snr29
+uint8_t		pt4_gln_snr30
+uint8_t		pt4_gln_snr31
+uint8_t		pt4_gln_snr32
+uint8_t	  pt4_gln_cnt
+
+[config]
+name	        IMU_21100
+type	        91
+int16_t         gyro_x_21100
+int16_t         gyro_y_21100
+int16_t         gyro_z_21100
+int16_t         acc_x_21100
+int16_t         acc_y_21100
+int16_t         acc_z_21100
+uint32_t        cnt_21100
+
+[config]
+name	        imu_raw0_0
+type	        2160
+int16_t         gyro_x0_0
+int16_t         gyro_y0_0
+int16_t         gyro_z0_0
+int16_t         acc_x0_0
+int16_t         acc_y0_0
+int16_t         acc_z0_0
+int16_t			gyro_temp0_0
+int16_t			acc_temp0_0
+float			baro0_0
+int16_t			baro_temp0_0
+uint16_t        log_cnt0_0
+
+expr E_gyro_x00 gyro_x0_0/1000*180/3.1415926
+expr E_gyro_y00 gyro_y0_0/1000*180/3.1415926
+expr E_gyro_z00 gyro_z0_0/1000*180/3.1415926
+expr E_acc_x00 acc_x0_0/1000
+expr E_acc_y00 acc_y0_0/1000
+expr E_acc_z00 acc_z0_0/1000
+[config]
+name	        imu_raw0_1
+type	        2161
+int16_t         gyro_x0_1
+int16_t         gyro_y0_1
+int16_t         gyro_z0_1
+int16_t         acc_x0_1
+int16_t         acc_y0_1
+int16_t         acc_z0_1
+int16_t			gyro_temp0_1
+int16_t			acc_temp0_1
+float			baro0_1
+int16_t			baro_temp0_1
+uint16_t        log_cnt0_1
+expr E_gyro_x01 gyro_x0_1/1000*180/3.1415926
+expr E_gyro_y01 gyro_y0_1/1000*180/3.1415926
+expr E_gyro_z01 gyro_z0_1/1000*180/3.1415926
+expr E_acc_x01 acc_x0_1/1000
+expr E_acc_y01 acc_y0_1/1000
+expr E_acc_z01 acc_z0_1/1000
+[config]
+name	        imu_raw0_2
+type	        2162
+int16_t         gyro_x0_2
+int16_t         gyro_y0_2
+int16_t         gyro_z0_2
+int16_t         acc_x0_2
+int16_t         acc_y0_2
+int16_t         acc_z0_2
+int16_t			gyro_temp0_2
+int16_t			acc_temp0_2
+float			baro0_2
+int16_t			baro_temp0_2
+uint16_t        log_cnt0_2
+
+[config]
+name	        imu_raw0_3
+type	        2163
+int16_t         gyro_x0_3
+int16_t         gyro_y0_3
+int16_t         gyro_z0_3
+int16_t         acc_x0_3
+int16_t         acc_y0_3
+int16_t         acc_z0_3
+int16_t			gyro_temp0_3
+int16_t			acc_temp0_3
+float			baro0_3
+int16_t			baro_temp0_3
+uint16_t        log_cnt0_3
+[config]
+name	        imu_raw1_0
+type	        2164
+int16_t         gyro_x1_0
+int16_t         gyro_y1_0
+int16_t         gyro_z1_0
+int16_t         acc_x1_0
+int16_t         acc_y1_0
+int16_t         acc_z1_0
+int16_t			gyro_temp1_0
+int16_t			acc_temp1_0
+float			baro1_0
+int16_t			baro_temp1_0
+uint16_t        log_cnt1_0
+
+[config]
+name	        imu_raw2_0
+type	        2168
+int16_t         gyro_x2_0
+int16_t         gyro_y2_0
+int16_t         gyro_z2_0
+int16_t         acc_x2_0
+int16_t         acc_y2_0
+int16_t         acc_z2_0
+int16_t			gyro_temp2_0
+int16_t			acc_temp2_0
+float			baro2_0
+int16_t			baro_temp2_0
+uint16_t        log_cnt2_0
+
+[config]
+name	        imu_init
+type	        6
+float           imu_offset_x
+float           imu_offset_y
+float           imu_offset_z
+float           gps_offset_x
+float           gps_offset_y
+float           gps_offset_z
+uint16_t        imu_dir
+uint8_t         imu_key
+uint8_t         o_sw
+float           mag_bias_x
+float           mag_bias_y
+float           mag_bias_z
+float           mag_scale_x
+float           mag_scale_y
+float           mag_scale_z
+uint16_t        init_counter
+
+
+[config]
+name     osd_general
+type	   12
+double   longtitude
+double   latitude
+int16_t  relative_height
+int16_t  vgx        // 0.1m/s,to ground
+int16_t  vgy        // 
+int16_t  vgz        //
+int16_t  pitch      // 0.1¶È
+int16_t  roll
+int16_t  yaw
+uint8_t  mode1      // controller state1 
+uint8_t  latest_cmd // controller exccute lastest cmd
+uint32_t controller_state     
+uint8_t  gps_nums
+uint8_t  gohome_landing_reason
+uint8_t  start_fail_reason
+uint8_t  controller_state_ext
+uint8_t  rsvd2
+uint8_t  ultrasonic_height
+uint16_t motor_startup_time
+uint8_t  motor_startup_times
+uint8_t  bat_alarm1
+uint8_t  bat_alarm2
+uint8_t  version_match
+uint8_t  product_type
+
+expr     E_on_ground          bitand(shift_r(controller_state,1),1)
+expr     E_in_air             bitand(shift_r(controller_state,2),1)
+expr     E_motor_on           bitand(shift_r(controller_state,3),1)
+expr     E_usonic_on          bitand(shift_r(controller_state,4),1)
+expr     E_gohome_state       shift_r(controller_state,5)and(7)
+expr     E_mvo_used           bitand(shift_r(controller_state,8),1)
+expr     E_battery_req_gohome bitand(shift_r(controller_state,9),1)
+expr     E_battery_req_land   bitand(shift_r(controller_state,10),1)
+expr     E_still_heating      bitand(shift_r(controller_state,12),1)
+expr     E_rc_state           shift_r(controller_state,13)and(3)
+expr     E_gps_used           bitand(shift_r(controller_state,15),1)
+expr     E_compass_over_range bitand(shift_r(controller_state,16),1)   
+expr     E_press_err          bitand(shift_r(controller_state,26),1)   
+expr     E_gps_state          (controller_state_ext)and(15) 
+
+
+[config]
+name    osd_home
+type    13
+double  osd_lon
+double  osd_lat
+float   osd_alt
+uint16_t osd_home_state
+uint16_t fixed_altitedue
+int16_t  course_lock_torsion
+uint8_t    recorder_state
+uint8_t    recorder_remained_capacity
+uint16_t  recorder_remained_time
+uint16_t  recorder_file_index
+
+
+expr	 E_homepoint_set       bitand(osd_home_state,1)
+expr	 E_method              bitand(shift_r(osd_home_state,1),1)
+expr	 E_heading             bitand(shift_r(osd_home_state,2),1)
+expr	 E_is_dyn_homepoint    bitand(shift_r(osd_home_state,3),1)
+expr	 E_multiple            bitand(shift_r(osd_home_state,6),1)
+expr	 E_ioc_enable          bitand(shift_r(osd_home_state,12),1)
+
+
+
+[config]
+name            fdi
+type            26
+ uint32_t       ns_abnormal_all
+ uint32_t       history_ns_abnormal_all
+	
+ uint8_t   gyro_bias_raw_flag
+ float       gyrox_bias_raw
+ float        gyroy_bias_raw
+ float        gyroz_bias_raw
+
+[config]  
+name      IMU_FDI_00
+type       2144
+uint16_t  fdi_gyro_00
+uint16_t  fdi_acc_00
+uint16_t  fdi_baro_00
+uint16_t  fdi_compass_00
+uint16_t  fdi_gps_00
+uint16_t  fdi_ns_00
+uint16_t  fdi_multi_00
+uint32_t  fdi_cnt_00
+
+expr	  E_multi_w_00        bitand(fdi_multi_00,1)
+expr	  E_multi_ag_00       bitand(shift_r(fdi_multi_00,1),1)
+expr	  E_multi_vgz_00      bitand(shift_r(fdi_multi_00,2),1)
+expr	  E_multi_h_00        bitand(shift_r(fdi_multi_00,3),1)
+expr	  E_multi_tilt_00     bitand(shift_r(fdi_multi_00,4),1)
+expr	  E_multi_yaw_00      bitand(shift_r(fdi_multi_00,5),1)
+expr	  E_multi_vxy_00      bitand(shift_r(fdi_multi_00,6),1)
+expr	  E_multi_pos_00      bitand(shift_r(fdi_multi_00,7),1)
+
+
+[config]  
+name      IMU_FDI_01
+type       2145
+uint16_t  fdi_gyro_01
+uint16_t  fdi_acc_01
+uint16_t  fdi_baro_01
+uint16_t  fdi_compass_01
+uint16_t  fdi_gps_01
+uint16_t  fdi_ns_01
+uint16_t  fdi_multi_01
+uint32_t  fdi_cnt_01
+
+expr	  E_multi_w_01        bitand(fdi_multi_01,1)
+expr	  E_multi_ag_01       bitand(shift_r(fdi_multi_01,1),1)
+expr	  E_multi_vgz_01      bitand(shift_r(fdi_multi_01,2),1)
+expr	  E_multi_h_01        bitand(shift_r(fdi_multi_01,3),1)
+expr	  E_multi_tilt_01     bitand(shift_r(fdi_multi_01,4),1)
+expr	  E_multi_yaw_01      bitand(shift_r(fdi_multi_01,5),1)
+expr	  E_multi_vxy_01      bitand(shift_r(fdi_multi_01,6),1)
+expr	  E_multi_pos_01      bitand(shift_r(fdi_multi_01,7),1)
+
+[config]  
+name      IMU_FDI_02
+type       2146
+uint16_t  fdi_gyro_02
+uint16_t  fdi_acc_02
+uint16_t  fdi_baro_02
+uint16_t  fdi_compass_02
+uint16_t  fdi_gps_02
+uint16_t  fdi_ns_02
+uint16_t  fdi_multi_02
+uint32_t  fdi_cnt_02
+
+expr	  E_multi_w_02        bitand(fdi_multi_02,1)
+expr	  E_multi_ag_02       bitand(shift_r(fdi_multi_02,1),1)
+expr	  E_multi_vgz_02      bitand(shift_r(fdi_multi_02,2),1)
+expr	  E_multi_h_02        bitand(shift_r(fdi_multi_02,3),1)
+expr	  E_multi_tilt_02     bitand(shift_r(fdi_multi_02,4),1)
+expr	  E_multi_yaw_02      bitand(shift_r(fdi_multi_02,5),1)
+expr	  E_multi_vxy_02      bitand(shift_r(fdi_multi_02,6),1)
+expr	  E_multi_pos_02      bitand(shift_r(fdi_multi_02,7),1)
+
+[config]
+name    DEBUG
+type    1600
+float   vincent_debug_data0
+float   vincent_debug_data1
+float   vincent_debug_data2
+float   vincent_debug_data3
+float   vincent_debug_data4
+float   vincent_debug_data5
+float   vincent_debug_data6
+float   vincent_debug_data7
+float   vincent_debug_data8
+float   vincent_debug_data9
+
+float   vincent_debug_data10
+float   vincent_debug_data11
+float   vincent_debug_data12
+float   vincent_debug_data13
+float   vincent_debug_data14
+float   vincent_debug_data15
+float   vincent_debug_data16
+float   vincent_debug_data17
+float   vincent_debug_data18
+float   vincent_debug_data19
+
+float   vincent_debug_data20
+float   vincent_debug_data21
+float   vincent_debug_data22
+float   vincent_debug_data23
+float   vincent_debug_data24
+float   vincent_debug_data25
+float   vincent_debug_data26
+float   vincent_debug_data27
+float   vincent_debug_data28
+float   vincent_debug_data29
+
+float   vincent_debug_data30
+float   vincent_debug_data31
+float   vincent_debug_data32
+float   vincent_debug_data33
+float   vincent_debug_data34
+float   vincent_debug_data35
+float   vincent_debug_data36
+float   vincent_debug_data37
+float   vincent_debug_data38
+float   vincent_debug_data39
+
+[string]
+name            fly_log
+type            32768
+
+
+[string]
+name            SD_logs
+type            65280
+
+[string]
+name            svn_info
+type            65534
+
+[config]
+name	        imu_data
+type	        7
+float           imu_gyro_tempX
+float           imu_gyro_tempY
+float           imu_gyro_tempZ
+float           imu_gyro_x
+float           imu_gyro_y
+float           imu_gyro_z
+float           imu_acc_x
+float           imu_acc_y
+float           imu_acc_z
+float           imu_airpress
+float           imu_Vin
+float           imu_Ref
+
+
+[config]
+name	        imu_cali_data
+type	        8
+float           gyrox_temp
+float			g_cfg_temper_bias.bias.bw[0]
+float			g_cfg_temper_bias.bias.bw[1]
+float			g_cfg_temper_bias.bias.bw[2]
+
+float			g_cfg_temper_bias.bias.ba[0]
+float			g_cfg_temper_bias.bias.ba[1]
+float			g_cfg_temper_bias.bias.ba[2]
+
+uint16_t        g_cfg_temper_bias_flag
+uint16_t        g_cfg_temper_bias_cali
+uint16_t        g_cfg_gyro_bias_flag
+uint16_t        g_cfg_gyro_bias_cali
+uint8_t         imu_cali_bias_sta_flag
+uint8_t         imu_cali_bias_sta_cnt
+uint8_t         g_cali_state
+uint16_t        clock
+int16_t 		time
+
+[config]
+name	        sensor_cfg_temp
+type	        9
+float         bias_gyrox
+float        bias_gyroy
+float        bias_gyroz
+float        bias_accx
+float        bias_accy
+float        bias_accz
+float        tw
+float        ta
+uint16_t     fw
+uint16_t     fa
+
+
+[config]
+name	        temp_ctl_data
+type	        10
+	int32_t p
+	int32_t i
+	int32_t i_small
+	int32_t d
+	int16_t dl_err
+	int16_t err_last
+	int32_t out
+
+	float kp
+	float ki
+	float kd
+
+	uint32_t ctl_out_value
+	uint32_t real_ctl_out_value
+
+	int16_t  dst_value
+	int16_t  cur_dst_temp
+
+	uint32_t cnt
+
+	uint8_t  real_ctl_out_per
+uint8_t slope_type
+uint8_t temp_ctl_slope
+uint8_t t_finish
+
+
+[config]
+name	        tail_3_order_iir_00
+type	        27
+float     w_a_aile_00
+float     w_a_elev_00
+float     w_a_tail_00
+float     w_aile_00
+float     w_elev_00
+float     w_tail_00
+uint16_t  cnt_00
+
+[config]
+name	        tail_3_order_iir_01
+type	        28
+float     w_a_aile_01
+float     w_a_elev_01
+float     w_a_tail_01
+float     w_aile_01
+float     w_elev_01
+float     w_tail_01
+uint16_t  cnt_01
+
+
+[config]
+name	        temp_ctl_data_00
+type	        2176	
+int16_t  dst_value_00
+int16_t  cur_dst_temp_00
+int32_t p_00
+int32_t i_00
+int32_t d_00
+int16_t dl_err_00
+uint8_t  real_ctl_out_per_00
+uint8_t  slope_type_00
+uint8_t  temp_ctl_slope_00
+uint8_t  t_finish_00
+int16_t err_last_00
+uint32_t ctl_out_value_00
+uint32_t real_ctl_out_value_00
+int32_t i_small_00
+int32_t out_00
+uint32_t cnt_00
+
+[config]
+name	        temp_ctl_data_01
+type	        2177	
+int16_t  dst_value_01
+int16_t  cur_dst_temp_01
+int32_t p_01
+int32_t i_01
+int32_t d_01
+int16_t dl_err_01
+uint8_t  real_ctl_out_per_01
+uint8_t  slope_type_01
+uint8_t  temp_ctl_slope_01
+uint8_t  t_finish_01
+int16_t err_last_01
+uint32_t ctl_out_value_01
+uint32_t real_ctl_out_value_01
+int32_t i_small_01
+int32_t out_01
+uint32_t cnt_01
+
+[config]
+name	        temp_ctl_data_02
+type	        2178	
+int16_t  dst_value_02
+int16_t  cur_dst_temp_02
+int32_t p_02
+int32_t i_02
+int32_t d_02
+int16_t dl_err_02
+uint8_t  real_ctl_out_per_02
+uint8_t  slope_type_02
+uint8_t  temp_ctl_slope_02
+uint8_t  t_finish_02
+int16_t err_last_02
+uint32_t ctl_out_value_02
+uint32_t real_ctl_out_value_02
+int32_t i_small_02
+int32_t out_02
+uint32_t cnt_02
+
+[config]
+name	        PWM_OUTPUT(uint:250ns)
+type	        20
+uint16_t      M1
+uint16_t      M2
+uint16_t      M3
+uint16_t      M4
+uint16_t      M5
+uint16_t      M6
+uint16_t      M7
+uint16_t      M8
+
+[config]
+name	        temp_bias_data
+type	        21
+float         _bw_x
+float         _bw_y
+float        _bw_z
+float        _ba_x
+float        _ba_y
+float        _ba_z
+float        _temp
+uint8_t        _flag
+
+[config]
+name	        temp_cali_data
+type	        22
+uint8_t 		_start_flag
+int8_t			 _state
+uint8_t 		_cali_cnt
+uint8_t 		_temp_ready
+uint8_t 		_step
+uint8_t _cali_type
+uint16_t _tick
+int8_t _grav_acc_x
+int8_t _grav_acc_y
+int8_t _grav_acc_z
+int8_t  _dst_cali_temp
+;float   		_dst_cali_temp
+float 			_temp_min
+float 			_temp_max
+	uint8_t _temp_cali_status
+	uint8_t _base_cali_status
+	uint8_t _cfg_temp_cali_fw_version
+	uint8_t _cur_temp_cali_fw_version
+float         _temp_bw_x
+float         _temp_bw_y
+float        _temp_bw_z
+float        _temp_ba_x
+float        _temp_ba_y
+float        _temp_ba_z
+float        _temp_temp
+float         _base_bw_x
+float         _base_bw_y
+float        _base_bw_z
+float        _base_ba_x
+float        _base_ba_y
+float        _base_ba_z
+float        _base_temp
+
+
+[config]
+name	        app_temp_bias_data
+type	        24
+float         bw_x
+float         bw_y
+float        bw_z
+float        ba_x
+float        ba_y
+float        ba_z
+float        temp
+uint8_t        flag
+
+
+[config]
+name	        app_temp_cali_data
+type	        25
+uint8_t 		start_flag
+int8_t			 state
+uint8_t 		cali_cnt
+uint8_t 		temp_ready
+uint8_t 		step
+uint8_t    cali_type
+uint16_t run_freq
+uint32_t tick
+int8_t grav_acc_x
+int8_t grav_acc_y
+int8_t grav_acc_z
+int8_t   		dst_cali_temp
+;float   		dst_cali_temp
+float 			temp_min
+float 			temp_max
+	uint8_t temp_cali_status
+	uint8_t base_cali_status
+	uint8_t cfg_temp_cali_fw_version
+	uint8_t cur_temp_cali_fw_version
+float         temp_bw_x
+float         temp_bw_y
+float        temp_bw_z
+float        temp_ba_x
+float        temp_ba_y
+float        temp_ba_z
+float        temp_temp
+
+float         base_bw_x
+float         base_bw_y
+float        base_bw_z
+float        base_ba_x
+float        base_ba_y
+float        base_ba_z
+float        base_temp
+
+[config]
+name	        temp_bias_data_00
+type	        2275
+float         _bw_x_00
+float         _bw_y_00
+float         _bw_z_00
+float         _ba_x_00
+float         _ba_y_00
+float         _ba_z_00
+float         _temp_00
+uint8_t       _flag_00
+
+
+[config]
+name	        app_temp_bias_data_00
+type	        2278
+float         bw_x_00
+float         bw_y_00
+float        bw_z_00
+float        ba_x_00
+float        ba_y_00
+float        ba_z_00
+float        temp_00
+uint8_t       flag_00
+
+[config]
+name	        temp_bias_data_01
+type	        2276
+float         _bw_x_01
+float         _bw_y_01
+float         _bw_z_01
+float         _ba_x_01
+float         _ba_y_01
+float         _ba_z_01
+float         _temp_01
+uint8_t       _flag_01
+
+
+[config]
+name	        app_temp_bias_data_01
+type	        2279
+float         bw_x_01
+float         bw_y_01
+float         bw_z_01
+float         ba_x_01
+float         ba_y_01
+float         ba_z_01
+float         temp_01
+uint8_t       flag_01
+
+[config]
+name	        temp_bias_data_02
+type	        2277
+float         _bw_x_02
+float         _bw_y_02
+float         _bw_z_02
+float         _ba_x_02
+float         _ba_y_02
+float         _ba_z_02
+float         _temp_02
+uint8_t       _flag_02
+
+
+[config]
+name	        app_temp_bias_data_02
+type	        2280
+float         bw_x_02
+float         bw_y_02
+float         bw_z_02
+float         ba_x_02
+float         ba_y_02
+float         ba_z_02
+float         temp_02
+uint8_t       flag_02
+
+[config]
+name	        temp_cali_data_00
+type	        2195
+uint8_t 		_start_flag_00
+int8_t			 _state_00
+uint8_t 		_cali_cnt_00
+uint8_t 		_temp_ready_00
+uint8_t 		_step_00
+uint8_t    	   _cali_type_00
+uint16_t      _run_freq_00
+uint32_t      _tick_00
+int8_t 		_grav_acc_x_00
+int8_t 		_grav_acc_y_00
+int8_t 			_grav_acc_z_00
+int8_t   		_dst_cali_temp_00
+;float   		_dst_cali_temp_00
+float 			_temp_min_00
+float 			_temp_max_00
+uint8_t 		_temp_cali_status_00
+uint8_t 		_base_cali_status_00
+uint8_t 		_cfg_temp_cali_fw_version_00
+uint8_t 			_cur_temp_cali_fw_version_00
+float         _temp_bw_x_00
+float         _temp_bw_y_00
+float        _temp_bw_z_00
+float        _temp_ba_x_00
+float        _temp_ba_y_00
+float        _temp_ba_z_00
+float        _temp_temp_00
+uint8_t      _flag_00
+uint8_t      reserved_2195_00
+uint16_t      reserved1_2195_00
+float         _base_bw_x_00
+float         _base_bw_y_00
+float        _base_bw_z_00
+float        _base_ba_x_00
+float        _base_ba_y_00
+float        _base_ba_z_00
+float        _base_temp_00
+
+	[config]
+name	        app_temp_cali_data_00
+type	        2198
+uint8_t 		start_flag_00
+int8_t			 state_00
+uint8_t 		cali_cnt_00
+uint8_t 		temp_ready_00
+uint8_t 		step_00
+uint8_t    	cali_type_00
+uint16_t run_freq
+uint32_t tick
+int8_t 		grav_acc_x_00
+int8_t 		grav_acc_y_00
+int8_t 			grav_acc_z_00
+int8_t   		dst_cali_temp_00
+float 			temp_min_00
+float 			temp_max_00
+uint8_t 		temp_cali_status_00
+uint8_t 		base_cali_status_00
+uint8_t 		cfg_temp_cali_fw_version_00
+uint8_t 			cur_temp_cali_fw_version_00
+float         temp_bw_x_00
+float         temp_bw_y_00
+float        temp_bw_z_00
+float        temp_ba_x_00
+float        temp_ba_y_00
+float        temp_ba_z_00
+float        temp_temp_00
+uint8_t      flag_00
+uint8_t      reserved_2198_00
+uint16_t      reserved1_2198_00
+float         base_bw_x_00
+float         base_bw_y_00
+float        base_bw_z_00
+float        base_ba_x_00
+float        base_ba_y_00
+float        base_ba_z_00
+float        base_temp_00
+
+
+[config]
+name	        temp_cali_data_01
+type	        2196
+uint8_t 		_start_flag_01
+int8_t			 _state_01
+uint8_t 		_cali_cnt_01
+uint8_t 		_temp_ready_01
+uint8_t 		_step_01
+uint8_t    	_cali_type_01
+uint16_t 	_tick_01
+int8_t 		_grav_acc_x_01
+int8_t 		_grav_acc_y_01
+int8_t 			_grav_acc_z_01
+int8_t   		_dst_cali_temp_01
+;float   		_dst_cali_temp_01
+float 			_temp_min_01
+float 			_temp_max_01
+uint8_t 		_temp_cali_status_01
+uint8_t 		_base_cali_status_01
+uint8_t 		_cfg_temp_cali_fw_version_01
+uint8_t 			_cur_temp_cali_fw_version_01
+float         _temp_bw_x_01
+float         _temp_bw_y_01
+float        _temp_bw_z_01
+float        _temp_ba_x_01
+float        _temp_ba_y_01
+float        _temp_ba_z_01
+float        _temp_temp_01
+uint8_t      _flag_01
+uint8_t      reserved_2196_01
+uint16_t      reserved1_2196_01
+float         _base_bw_x_01
+float         _base_bw_y_01
+float        _base_bw_z_01
+float        _base_ba_x_01
+float        _base_ba_y_01
+float        _base_ba_z_01
+float        _base_temp_01
+
+	[config]
+name	        app_temp_cali_data_01
+type	        2199
+uint8_t 		start_flag_01
+int8_t			 state_01
+uint8_t 		cali_cnt_01
+uint8_t 		temp_ready_01
+uint8_t 		step_01
+uint8_t    	cali_type_01
+uint16_t run_freq
+uint32_t tick
+int8_t 		grav_acc_x_01
+int8_t 		grav_acc_y_01
+int8_t 			grav_acc_z_01
+int8_t   		dst_cali_temp_01
+;float   		dst_cali_temp_01
+float 			temp_min_01
+float 			temp_max_01
+uint8_t 		temp_cali_status_01
+uint8_t 		base_cali_status_01
+uint8_t 		cfg_temp_cali_fw_version_01
+uint8_t 			cur_temp_cali_fw_version_01
+float         temp_bw_x_01
+float         temp_bw_y_01
+float        temp_bw_z_01
+float        temp_ba_x_01
+float        temp_ba_y_01
+float        temp_ba_z_01
+float        temp_temp_01
+uint8_t      flag_01
+uint8_t      reserved_2199_01
+uint16_t      reserved1_2199_01
+float         base_bw_x_01
+float         base_bw_y_01
+float        base_bw_z_01
+float        base_ba_x_01
+float        base_ba_y_01
+float        base_ba_z_01
+float        base_temp_01
+
+
+[config]
+name	        temp_cali_data_02
+type	        2197
+uint8_t 		_start_flag_02
+int8_t			 _state_02
+uint8_t 		_cali_cnt_02
+uint8_t 		_temp_ready_02
+uint8_t 		_step_02
+uint8_t    	_cali_type_02
+uint16_t 	_tick_02
+int8_t 		_grav_acc_x_02
+int8_t 		_grav_acc_y_02
+int8_t 			_grav_acc_z_02
+int8_t   		_dst_cali_temp_02
+float 			_temp_min_02
+float 			_temp_max_02
+uint8_t 		_temp_cali_status_02
+uint8_t 		_base_cali_status_02
+uint8_t 		_cfg_temp_cali_fw_version_02
+uint8_t 			_cur_temp_cali_fw_version_02
+float         _temp_bw_x_02
+float         _temp_bw_y_02
+float        _temp_bw_z_02
+float        _temp_ba_x_02
+float        _temp_ba_y_02
+float        _temp_ba_z_02
+float        _temp_temp_02
+uint8_t      _flag_02
+uint8_t      reserved_2197_02
+uint16_t      reserved1_2197_02
+float         _base_bw_x_02
+float         _base_bw_y_02
+float        _base_bw_z_02
+float        _base_ba_x_02
+float        _base_ba_y_02
+float        _base_ba_z_02
+float        _base_temp_02
+
+	[config]
+name	        app_temp_cali_data_02
+type	        2200
+uint8_t 		start_flag_02
+int8_t			 state_02
+uint8_t 		cali_cnt_02
+uint8_t 		temp_ready_02
+uint8_t 		step_02
+uint8_t    	cali_type_02
+uint16_t run_freq
+uint32_t tick
+int8_t 		grav_acc_x_02
+int8_t 		grav_acc_y_02
+int8_t 			grav_acc_z_02
+int8_t   		dst_cali_temp_02
+float 			temp_min_02
+float 			temp_max_02
+uint8_t 		temp_cali_status_02
+uint8_t 		base_cali_status_02
+uint8_t 		cfg_temp_cali_fw_version_02
+uint8_t 			cur_temp_cali_fw_version_02
+float         temp_bw_x_02
+float         temp_bw_y_02
+float        temp_bw_z_02
+float        temp_ba_x_02
+float        temp_ba_y_02
+float        temp_ba_z_02
+float        temp_temp_02
+uint8_t      flag_02
+uint8_t      reserved_2200_02
+uint16_t      reserved1_2200_02
+float         base_bw_x_02
+float         base_bw_y_02
+float        base_bw_z_02
+float        base_ba_x_02
+float        base_ba_y_02
+float        base_ba_z_02
+float        base_temp_02
+
+
+
+
+[config]
+name	        mpu6500_raw_data
+type	        35
+float 	mpu6500_ax
+float 	mpu6500_ay
+float 	mpu6500_az
+float 	mpu6500_wx
+float 	mpu6500_wy
+float 	mpu6500_wz
+
+[config]
+name	        adxl278_raw_data
+type	        36
+float 	adxl278_ax
+float 	adxl278_ay
+float 	adxl278_az
+
+[config]
+name	  svo_debug
+type	  101
+float 	VisionDebug1
+float 	VisionDebug2
+float 	VisionDebug3
+float 	VisionDebug4
+float 	VisionDebug5
+float 	VisionDebug6
+float 	VisionDebug7
+float 	VisionDebug8
+
+expr	E_led_atti	bitand(filter_status,3)
+expr	E_led_hori	bitand(shift_r(filter_status,2),3)
+expr	E_led_vert	bitand(shift_r(filter_status,4),3)
+expr	E_led_gps_new	bitand(shift_r(filter_status,6),3)
+expr	E_long_gps	if(long_gps/10000000<113.93,113.93,long_gps/10000000)
+expr	E_lat_gps	if(lat_gps/10000000<22.53,22.53,lat_gps/10000000)
+expr	E_longti	if(longti/3.14159265*180<113.93,113.93,longti/3.14159265*180)
+expr	E_lati	        if(lati/3.14159265*180<22.53,22.53,lati/3.14159265*180)
+expr	E_longti_sim	if(longti_sim/3.14159265*180<113.93,113.93,longti_sim/3.14159265*180)
+expr	E_lati_sim	if(lati_sim/3.14159265*180<22.53,22.53,lati_sim/3.14159265*180)
+expr	E_x	        if(absf(x)>50,50,x)
+expr	E_x_m	        if(absf(x_m)>50,50,x_m)
+expr	E_y	        if(absf(y)>50,50,y)
+expr	E_y_m	        if(absf(y_m)<50,50,y_m)
+expr	E_pitch	        -asin_x(2*(q1*q3-q0*q2))/3.1415926*180
+expr	E_roll	        atan2(2*(q2*q3+q0*q1),1-2*(q1*q1+q2*q2))/3.1415926*180
+expr	E_yaw	        atan2(2*(q1*q2+q0*q3),1-2*(q2*q2+q3*q3))/3.1415926*180
+expr	E_yaw_from_m	atan2(-(m_y*cos(E_roll/57.29578)-m_z*sin(E_roll/57.29578)),m_x*cos(E_pitch/57.29578)+m_y*sin(E_pitch/57.29578)*sin(E_roll/57.29578)+m_z*sin(E_pitch/57.29578)*cos(E_roll/57.29578))*180/3.14159265
+expr	lon	        if(longti<1.9886,1.9886,longti)
+expr	lat	        if(lati<0.3933,0.3933,lati)
+expr	nedx	        (lat-0.3933)*6378137.0
+expr	nedy	        (lon-1.9886)*6378137.0*cos(lat)
+expr	E_mod_m	        sqrt(m_x^2+m_y^2+m_z^2)
+expr	E_mod_acc	sqrt(acc_x^2+acc_y^2+acc_z^2)
+expr	E_mod_acc_xy	sqrt(acc_x^2+acc_y^2)
+expr	E_vel_n	        vel_n/100.0
+expr	E_vel_e	        vel_e/100.0
+expr	E_vel_d	        vel_d/100.0
+expr	E_gps_err	bitand(shift_r(gpstime,24),255)
+expr	E_svn_gln	bitand(shift_r(gpsalt,0),15)
+expr	E_svn_gps	bitand(shift_r(gpsalt,4),15)
+expr	E_svn_check	E_svn_gln+E_svn_gps-numsv
+expr	E_pitch_sim	-asin_x(2*(q1_sim*q3_sim-q0_sim*q2_sim))/3.1415926*180
+expr	E_roll_sim	atan2(2*(q2_sim*q3_sim+q0_sim*q1_sim),1-2*(q1_sim*q1_sim+q2_sim*q2_sim))/3.1415926*180
+expr	E_yaw_sim	atan2(2*(q1_sim*q2_sim+q0_sim*q3_sim),1-2*(q2_sim*q2_sim+q3_sim*q3_sim))/3.1415926*180
+expr	E_pitch_rad_sim	-asin_x(2*(q1_sim*q3_sim-q0_sim*q2_sim))
+expr	E_roll_rad_sim	atan2(2*(q2_sim*q3_sim+q0_sim*q1_sim),1-2*(q1_sim*q1_sim+q2_sim*q2_sim))
+expr	E_yaw_rad_sim	atan2(2*(q1_sim*q2_sim+q0_sim*q3_sim),1-2*(q2_sim*q2_sim+q3_sim*q3_sim))
+expr	E_vb_x	        (1-2*q2*q2-2*q3*q3)*vg_x+(2*q1*q2+2*q3*q0)*vg_y+(2*q1*q3-2*q2*q0)*vg_z
+expr	E_vb_y	        (2*q1*q2-2*q3*q0)*vg_x+(1-2*q1*q1-2*q3*q3)*vg_y+(2*q2*q3+2*q1*q0)*vg_z
+expr	E_vb_z	        (2*q1*q3+2*q2*q0)*vg_x+(2*q2*q3-2*q1*q0)*vg_y+(1-2*q1*q1-2*q2*q2)*vg_z
+expr	E_vb_norm_acc	sqrt(acc_x*acc_x*9.8*9.8+acc_y*acc_y*9.8*9.8)
+expr	E_vb_norm_vb	sqrt(E_vb_x^2+E_vb_y^2)
+expr	E_vb_x_sim	(1-2*q2*q2-2*q3*q3)*vg_x_sim+(2*q1*q2+2*q3*q0)*vg_y_sim+(2*q1*q3-2*q2*q0)*vg_z_sim
+expr	E_vb_y_sim	(2*q1*q2-2*q3*q0)*vg_x_sim+(1-2*q1*q1-2*q3*q3)*vg_y_sim+(2*q2*q3+2*q1*q0)*vg_z_sim
+expr	E_vb_z_sim	(2*q1*q3+2*q2*q0)*vg_x_sim+(2*q2*q3-2*q1*q0)*vg_y_sim+(1-2*q1*q1-2*q2*q2)*vg_z_sim
+expr	E_vb_x_yaw_sim	cos(E_yaw_rad_sim)*vg_x_sim+sin(E_yaw_rad_sim)*vg_y_sim
+expr	E_vb_y_yaw_sim	-sin(E_yaw_rad_sim)*vg_x_sim+cos(E_yaw_rad_sim)*vg_y_sim
+expr	E_ab_x	        (1-2*q2*q2-2*q3*q3)*ag_x+(2*q1*q2+2*q3*q0)*ag_y+(2*q1*q3-2*q2*q0)*ag_z
+expr	E_ab_y	        (2*q1*q2-2*q3*q0)*ag_x+(1-2*q1*q1-2*q3*q3)*ag_y+(2*q2*q3+2*q1*q0)*ag_z
+expr	E_ab_z	        (2*q1*q3+2*q2*q0)*ag_x+(2*q2*q3-2*q1*q0)*ag_y+(1-2*q1*q1-2*q2*q2)*ag_z
+expr	E_mvo_vx	-mvo_vx/1000
+expr	E_mvo_vy	-mvo_vy/1000
+expr	E_us_h_grnd	us_h_grnd/1000
+expr	E_us_h_flag	bitand(vo_flag,1)
+expr	E_us_v_flag	bitand(shift_r(vo_flag,1),1)
+expr	E_vo_pos_flag	bitand(shift_r(vo_flag,2),1)
+expr	E_vo_vel_flag	bitand(shift_r(vo_flag,3),1)
+
+
+expr	E_gln_snr1	bitand(gln_snr1,127)
+expr	E_gln_snr2	bitand(gln_snr2,127)
+expr	E_gln_snr3	bitand(gln_snr3,127)
+expr	E_gln_snr4	bitand(gln_snr4,127)
+expr	E_gln_snr5	bitand(gln_snr5,127)
+expr	E_gln_snr6	bitand(gln_snr6,127)
+expr	E_gln_snr7	bitand(gln_snr7,127)
+expr	E_gln_snr8	bitand(gln_snr8,127)
+expr	E_gln_snr9	bitand(gln_snr9,127)
+expr	E_gln_snr10	bitand(gln_snr10,127)
+expr	E_gln_snr11	bitand(gln_snr11,127)
+expr	E_gln_snr12	bitand(gln_snr12,127)
+expr	E_gln_snr13	bitand(gln_snr13,127)
+expr	E_gln_snr14	bitand(gln_snr14,127)
+expr	E_gln_snr15	bitand(gln_snr15,127)
+expr	E_gln_snr16	bitand(gln_snr16,127)
+expr	E_gln_snr17	bitand(gln_snr17,127)
+expr	E_gln_snr18	bitand(gln_snr18,127)
+expr	E_gln_snr19	bitand(gln_snr19,127)
+expr	E_gln_snr20	bitand(gln_snr20,127)
+expr	E_gln_snr21	bitand(gln_snr21,127)
+expr	E_gln_snr22	bitand(gln_snr22,127)
+expr	E_gln_snr23	bitand(gln_snr23,127)
+expr	E_gln_snr24	bitand(gln_snr24,127)
+expr	E_gln_snr25	bitand(gln_snr25,127)
+expr	E_gln_snr26	bitand(gln_snr26,127)
+expr	E_gln_snr27	bitand(gln_snr27,127)
+expr	E_gln_snr28	bitand(gln_snr28,127)
+expr	E_gln_snr29	bitand(gln_snr29,127)
+expr	E_gln_snr30	bitand(gln_snr30,127)
+expr	E_gln_snr31	bitand(gln_snr31,127)
+expr	E_gln_snr32	bitand(gln_snr32,127)
+
+expr	E_gps_snr1	bitand(gps_snr1,127)
+expr	E_gps_snr2	bitand(gps_snr2,127)
+expr	E_gps_snr3	bitand(gps_snr3,127)
+expr	E_gps_snr4	bitand(gps_snr4,127)
+expr	E_gps_snr5	bitand(gps_snr5,127)
+expr	E_gps_snr6	bitand(gps_snr6,127)
+expr	E_gps_snr7	bitand(gps_snr7,127)
+expr	E_gps_snr8	bitand(gps_snr8,127)
+expr	E_gps_snr9	bitand(gps_snr9,127)
+expr	E_gps_snr10	bitand(gps_snr10,127)
+expr	E_gps_snr11	bitand(gps_snr11,127)
+expr	E_gps_snr12	bitand(gps_snr12,127)
+expr	E_gps_snr13	bitand(gps_snr13,127)
+expr	E_gps_snr14	bitand(gps_snr14,127)
+expr	E_gps_snr15	bitand(gps_snr15,127)
+expr	E_gps_snr16	bitand(gps_snr16,127)
+expr	E_gps_snr17	bitand(gps_snr17,127)
+expr	E_gps_snr18	bitand(gps_snr18,127)
+expr	E_gps_snr19	bitand(gps_snr19,127)
+expr	E_gps_snr20	bitand(gps_snr20,127)
+expr	E_gps_snr21	bitand(gps_snr21,127)
+expr	E_gps_snr22	bitand(gps_snr22,127)
+expr	E_gps_snr23	bitand(gps_snr23,127)
+expr	E_gps_snr24	bitand(gps_snr24,127)
+expr	E_gps_snr25	bitand(gps_snr25,127)
+expr	E_gps_snr26	bitand(gps_snr26,127)
+expr	E_gps_snr27	bitand(gps_snr27,127)
+expr	E_gps_snr28	bitand(gps_snr28,127)
+expr	E_gps_snr29	bitand(gps_snr29,127)
+expr	E_gps_snr30	bitand(gps_snr30,127)
+expr	E_gps_snr31	bitand(gps_snr31,127)
+expr	E_gps_snr32	bitand(gps_snr32,127)
+
+[config]
+name            uc_monitor
+type            52720
+uint16_t				cpu_usage(%)
+uint16_t				cpu_usage_task_b(%)
+uint16_t				cpu_usage_task_a(%)
+uint16_t				uc_resv0
+uint16_t				max_time_workqueue
+uint16_t				max_time_task_b
+uint16_t				max_time_task_a
+uint16_t				max_time_task_c
+uint16_t				max_time_task_d
+uint16_t				uc_resv1
+uint16_t				stack_usage_irq(%)
+uint16_t				stack_usage_workqueue(%)
+uint16_t				stack_usage_b(%)
+uint16_t				stack_usage_a(%)
+uint16_t				stack_usage_c(%)
+uint16_t				stack_usage_d(%)
+uint16_t				uc_resv2
+uint16_t				pend_cnt_a
+uint16_t				pend_cnt_b
+uint16_t				pend_cnt_c
+uint16_t				pend_cnt_d
+
+[config]
+name            rc_delay
+type            52735
+
+uint32_t 		dly_ns
+[config]
+name            taskb_info
+type            52738
+
+int32_t			period_jitter0
+uint16_t 		exec_time0
+uint16_t 		pending0
+
+[config]
+name            taska_info
+type            52742
+
+int32_t			period_jitter1
+uint16_t 		exec_time1
+uint16_t 		pending1
+
+[config]
+name            taskc_info
+type            52744
+
+int32_t			period_jitter2
+uint16_t 		exec_time2
+uint16_t 		pending2
+
+[config]
+name            taskd_info
+type            52745
+
+int32_t			period_jitter3
+uint16_t 		exec_time3
+uint16_t 		pending3
+
+
+[config]
+name            rc_replay
+type            52726
+
+int16_t 		CMD_ALIERON
+int16_t			CMD_ELEVATOR
+int16_t			CMD_THROTTLE
+int16_t			CMD_RUDDER
+int16_t 		CMD_MODE
+int16_t			CMD_IOC
+int16_t 		CMD_GO_HOME
+int16_t			CMD_D4
+
+[config]
+name            escm
+type            52721
+uint8_t 	esc1_status
+int16_t 	esc1_current
+int16_t 	esc1_speed
+int16_t 	esc1_voltage
+int16_t 	esc1_temperature
+int16_t 	esc1_ppm_recv
+int16_t 	esc1_v_out
+int16_t 	esc1_debug0
+int16_t 	esc1_debug1
+int16_t 	esc1_debug2
+uint8_t 	esc2_status
+int16_t 	esc2_current
+int16_t 	esc2_speed
+int16_t 	esc2_voltage
+int16_t 	esc2_temperature
+int16_t 	esc2_ppm_recv
+int16_t 	esc2_v_out
+int16_t 	esc2_debug0
+int16_t 	esc2_debug1
+int16_t 	esc2_debug2
+uint8_t 	esc3_status
+int16_t 	esc3_current
+int16_t 	esc3_speed
+int16_t 	esc3_voltage
+int16_t 	esc3_temperature
+int16_t 	esc3_ppm_recv
+int16_t 	esc3_v_out
+int16_t 	esc3_debug0
+int16_t 	esc3_debug1
+int16_t 	esc3_debug2
+uint8_t 	esc4_status
+int16_t 	esc4_current
+int16_t 	esc4_speed
+int16_t 	esc4_voltage
+int16_t 	esc4_temperature
+int16_t 	esc4_ppm_recv
+int16_t 	esc4_v_out
+int16_t 	esc4_debug0
+int16_t 	esc4_debug1
+int16_t 	esc4_debug2
+
+[config]
+name            sweep
+type            52722
+
+uint16_t	ppm1
+uint16_t	ppm2
+uint16_t	ppm3
+uint16_t	ppm4
+[config]
+name            recorder_monitor
+type            199
+
+uint32_t	recorder_lost
+uint32_t	recorder_write
+uint32_t	recorder_speed
+
+
+[config]
+name      mvo
+type      14
+float     mvo_px
+float     mvo_py
+float     mvo_pz  
+int16_t   mvo_vx
+int16_t   mvo_vy
+int16_t   mvo_vz
+uint8_t	  mvo_cnt
+uint8_t   mvo_flag 
+
+expr E_mvo_px_flag   bitand(shift_r(mvo_flag,4),1)
+expr E_mvo_py_flag   bitand(shift_r(mvo_flag,5),1)
+expr E_mvo_pz_flag   bitand(shift_r(mvo_flag,6),1)
+expr E_mvo_vx_flag   bitand(shift_r(mvo_flag,0),1)
+expr E_mvo_vy_flag   bitand(shift_r(mvo_flag,1),1)
+expr E_mvo_vz_flag   bitand(shift_r(mvo_flag,2),1)
+
+
+[config]
+name      usonic
+type      16
+int16_t   usonic_h
+uint8_t   usonic_flag
+uint8_t   usonic_cnt
+expr			E_us_flag_old		bitand(usonic_flag,1)
+
+[string]
+name            console
+type            52719
+
+[config_dump]
+name            SysCfg
+type            65535
+
+[config]
+name   battery_info 
+type   17
+uint16_t design_capacity
+uint16_t full_charge_capacity
+uint16_t remaining_capacity
+uint16_t pack_voltage
+int16_t  current
+uint8_t  life_percentage
+uint8_t  capacity_percentage
+int16_t  temperature
+uint16_t cycle_count
+uint16_t serial_number
+uint16_t cell1
+uint16_t cell2
+uint16_t cell3 
+uint16_t cell4 
+uint16_t cell5 
+uint16_t cell6  
+int16_t  average_current
+uint8_t  right
+uint32_t error_count
+uint32_t n_discharge_times
+uint32_t current_status
+uint16_t vol_main
+
+[config]
+name  special_cmd
+type  23
+uint8_t        byte1
+uint8_t        byte2
+uint16_t       word1
+uint8_t        byte3
+uint8_t        ctrl_action
+uint8_t        byte4
+uint8_t        byte5
+uint8_t        byte6
+uint8_t        byte7
+
+
+[config]
+name  serial_api_inputs
+type  60
+uint8_t user_req_ctrl_flag
+float	user_req_roll_or_x
+float	user_req_pitch_or_y
+float	user_req_thr_z
+float	user_req_yaw
+uint8_t nav_cur_dev
+uint8_t api_cur_sub_mode
+uint8_t api_user_ctrl_data_health
+uint8_t api_app_ctrl_data_health
+uint8_t user_open_close_req
+uint8_t user_open_close_ack
+uint8_t user_flight_cmd_req
+uint8_t user_flight_cmd_ack
+
+[config]
+name  ctrl_vert
+type  50
+
+uint8_t		vert_module_module_mode
+uint8_t		vert_module_vert_hover_state
+uint8_t		vert_module_vert_hover_enable
+float		vert_module_vert_hover_pos
+float		vert_module_vert_hover_brake_timer
+float		vert_module_take_off_thrust
+uint8_t		vert_module_auto_take_off_state
+float		vert_module_auto_take_off_height
+
+uint8_t 	api_vert_ctrl_mode
+uint8_t 	api_vert_ctrl_cmd_id
+
+uint8_t 	vert_pos_status
+uint8_t     	vert_pos_cmd_id
+uint8_t     	vert_pos_feedback_id
+int16_t 	vert_pos_cmd
+int16_t 	vert_pos_feedback
+int16_t    	vert_pos_P_ctrl
+int16_t 	vert_pos_output
+
+uint8_t 	vert_vel_status
+uint8_t     	vert_vel_cmd_id
+uint8_t     	vert_vel_feedback_id
+int16_t 	vert_vel_cmd
+int16_t 	vert_vel_cmd_before_limit
+int16_t 	vert_vel_cmd_after_limit
+int16_t 	vert_vel_feedback
+int16_t    	vert_vel_P_ctrl
+int16_t 	vert_vel_output
+
+uint8_t 	vert_acc_status
+uint8_t     	vert_acc_cmd_id
+uint8_t         vert_acc_feedback_id
+int16_t     	vert_acc_cmd          
+int16_t     	vert_acc_feedback     
+int16_t    	vert_acc_P_ctrl       
+int16_t     	vert_acc_I_ctrl      
+
+int16_t     	vert_acc_feedforward  
+
+int16_t     	vert_acc_output       
+
+uint8_t         vert_thrust_status
+uint8_t         vert_thrust_cmd_id
+uint8_t         vert_thrust_feedback_id
+int16_t         vert_thrust_cmd_data
+
+[config]
+name  ctrl_horiz
+type  51
+
+uint8_t		horiz_module_module_mode
+uint8_t		horiz_module_horiz_hover_state
+uint8_t		horiz_module_horiz_hover_enable
+double		horiz_module_horiz_hover_abs_pos_0
+double		horiz_module_horiz_hover_abs_pos_1
+float		horiz_module_horiz_hover_rel_pos_0
+float		horiz_module_horiz_hover_rel_pos_1
+float		horiz_module_horiz_hover_brake_timer
+float		horiz_module_horiz_pos_offset_0
+float		horiz_module_horiz_pos_offset_1
+
+uint8_t 	api_horiz_ctrl_mode
+uint8_t 	api_horiz_ctrl_cmd_id
+uint8_t 	api_torsion_ctrl_mode
+uint8_t 	api_torsion_ctrl_cmd_id
+uint8_t 	api_atti_cmd_type
+uint8_t 	api_emergency_break_flag
+
+uint8_t 	horiz_pos_tag_status
+uint8_t 	horiz_pos_tag_cmd_id
+uint8_t 	horiz_pos_tag_feedback_id    
+int16_t 	horiz_pos_cmd_x
+int16_t 	horiz_pos_cmd_y
+int16_t 	horiz_pos_feedback_x
+int16_t 	horiz_pos_feedback_y
+int16_t 	horiz_pos_P_ctrl_x
+int16_t 	horiz_pos_P_ctrl_y
+int16_t 	horiz_pos_D_ctrl_x
+int16_t 	horiz_pos_D_ctrl_y
+int16_t 	horiz_pos_output_x
+int16_t 	horiz_pos_output_y
+
+uint8_t 	horiz_vel_tag_status
+uint8_t 	horiz_vel_tag_cmd_id
+uint8_t 	horiz_vel_tag_feedback_id    
+int16_t 	horiz_vel_cmd_x
+int16_t 	horiz_vel_cmd_y
+int16_t 	horiz_vel_feedback_x
+int16_t 	horiz_vel_feedback_y
+int16_t 	horiz_vel_P_ctrl_x
+int16_t 	horiz_vel_P_ctrl_y
+int16_t 	horiz_vel_D_ctrl_x
+int16_t 	horiz_vel_D_ctrl_y
+int16_t 	horiz_vel_I_ctrl_x
+int16_t 	horiz_vel_I_ctrl_y
+int16_t 	horiz_vel_feedforward_x
+int16_t 	horiz_vel_feedforward_y
+int16_t 	horiz_vel_output_x
+int16_t 	horiz_vel_output_y
+
+uint8_t 	horiz_acc_tag_status
+uint8_t 	horiz_acc_tag_cmd_id
+uint8_t 	horiz_acc_tag_feedback_id    
+int16_t         horiz_acc_cmd_x
+int16_t         horiz_acc_cmd_y
+int16_t         horiz_acc_feedback_x
+int16_t         horiz_acc_feedback_y
+int16_t         horiz_acc_feedback_I_x
+int16_t         horiz_acc_feedback_I_y
+int16_t         horiz_acc_feedforward_x
+int16_t         horiz_acc_feedforward_y
+int16_t         horiz_acc_output_x
+int16_t         horiz_acc_output_y
+
+
+[config]
+name  ctrl_atti
+type  52
+
+uint8_t 	horiz_atti_tilt_tag_status
+uint8_t 	horiz_atti_tilt_tag_cmd_id
+uint8_t 	horiz_atti_tilt_tag_feedback_id    
+uint8_t 	horiz_atti_torsion_tag_status
+uint8_t 	horiz_atti_torsion_tag_cmd_id
+uint8_t 	horiz_atti_torsion_tag_feedback_id
+float		horiz_atti_tgt_acc_x
+float		horiz_atti_tgt_acc_y
+float		horiz_atti_tgt_tilt_x
+float		horiz_atti_tgt_tilt_y
+float		horiz_atti_tgt_body_tilt_x
+float		horiz_atti_tgt_body_tilt_y
+float		horiz_atti_tgt_ground_tilt_x
+float		horiz_atti_tgt_ground_tilt_y
+float		horiz_atti_tgt_tilt_before_limit_x
+float		horiz_atti_tgt_tilt_before_limit_y
+float		horiz_atti_tgt_tilt_after_limit_x
+float		horiz_atti_tgt_tilt_after_limit_y
+float		horiz_atti_tgt_quat_0
+float		horiz_atti_tgt_quat_1
+float		horiz_atti_tgt_quat_2
+float		horiz_atti_tgt_quat_3
+float		horiz_atti_tgt_torsion
+float		horiz_atti_tgt_torsion_rate
+float		horiz_atti_feedback_quat_0
+float		horiz_atti_feedback_quat_1
+float		horiz_atti_feedback_quat_2
+float		horiz_atti_feedback_quat_3
+float		horiz_atti_locked_torsion
+float		horiz_atti_err_tilt_x
+float		horiz_atti_err_tilt_y
+float		horiz_atti_err_torsion
+float		horiz_atti_output_x
+float		horiz_atti_output_y
+float		horiz_atti_output_z
+
+uint8_t 	horiz_ang_vel_status
+uint8_t     	horiz_ang_vel_cmd_id
+uint8_t     	horiz_ang_vel_feedback_id
+int16_t 	horiz_ang_vel_cmd_x
+int16_t 	horiz_ang_vel_cmd_y
+int16_t 	horiz_ang_vel_cmd_z
+int16_t 	horiz_ang_vel_feedback_x
+int16_t 	horiz_ang_vel_feedback_y
+int16_t 	horiz_ang_vel_feedback_z
+int16_t 	horiz_ang_vel_feedback_P_x
+int16_t 	horiz_ang_vel_feedback_P_y
+int16_t 	horiz_ang_vel_feedback_P_z
+int16_t 	horiz_ang_vel_feedback_D_x
+int16_t 	horiz_ang_vel_feedback_D_y
+int16_t 	horiz_ang_vel_feedback_D_z
+int16_t 	horiz_ang_vel_output_x
+int16_t 	horiz_ang_vel_output_y
+int16_t 	horiz_ang_vel_output_z
+
+uint8_t 	horiz_ang_acc_status
+uint8_t     	horiz_ang_acc_cmd_id
+uint8_t     	horiz_ang_acc_feedback_id
+int16_t 	horiz_ang_acc_cmd_x
+int16_t 	horiz_ang_acc_cmd_y
+int16_t 	horiz_ang_acc_cmd_z
+int16_t 	horiz_ang_acc_feedback_x
+int16_t 	horiz_ang_acc_feedback_y
+int16_t 	horiz_ang_acc_feedback_z
+int16_t 	horiz_ang_acc_P_ctrl_x
+int16_t 	horiz_ang_acc_P_ctrl_y
+int16_t 	horiz_ang_acc_P_ctrl_z
+int16_t 	horiz_ang_acc_I_ctrl_x
+int16_t 	horiz_ang_acc_I_ctrl_y
+int16_t 	horiz_ang_acc_I_ctrl_z
+int16_t 	horiz_ang_acc_feedforward_direct_x
+int16_t 	horiz_ang_acc_feedforward_direct_y
+int16_t 	horiz_ang_acc_feedforward_direct_z
+int16_t 	horiz_ang_acc_feedforward_compen_x
+int16_t 	horiz_ang_acc_feedforward_compen_y
+int16_t 	horiz_ang_acc_feedforward_compen_z
+int16_t 	horiz_ang_acc_output_x
+int16_t 	horiz_ang_acc_output_y
+int16_t 	horiz_ang_acc_output_z
+
+expr	E_cmd_pitch	        -asin_x(2*(horiz_atti_tgt_q1*horiz_atti_tgt_q3-horiz_atti_tgt_q0*horiz_atti_tgt_q2))/3.1415926*180
+expr	E_cmd_roll	        atan2(2*(horiz_atti_tgt_q2*horiz_atti_tgt_q3+horiz_atti_tgt_q0*horiz_atti_tgt_q1),1-2*(horiz_atti_tgt_q1*horiz_atti_tgt_q1+horiz_atti_tgt_q2*horiz_atti_tgt_q2))/3.1415926*180
+expr	E_cmd_yaw	        atan2(2*(horiz_atti_tgt_q1*horiz_atti_tgt_q2+horiz_atti_tgt_q0*horiz_atti_tgt_q3),1-2*(horiz_atti_tgt_q2*horiz_atti_tgt_q2+horiz_atti_tgt_q3*horiz_atti_tgt_q3))/3.1415926*180
+
+expr	E_feedback_pitch	        -asin_x(2*(horiz_atti_feedback_q1*horiz_atti_feedback_q3-horiz_atti_feedback_q0*horiz_atti_feedback_q2))/3.1415926*180
+expr	E_feedback_roll	        atan2(2*(horiz_atti_feedback_q2*horiz_atti_feedback_q3+horiz_atti_feedback_q0*horiz_atti_feedback_q1),1-2*(horiz_atti_feedback_q1*horiz_atti_feedback_q1+horiz_atti_feedback_q2*horiz_atti_feedback_q2))/3.1415926*180
+expr	E_feedback_yaw	        atan2(2*(horiz_atti_feedback_q1*horiz_atti_feedback_q2+horiz_atti_feedback_q0*horiz_atti_feedback_q3),1-2*(horiz_atti_feedback_q2*horiz_atti_feedback_q2+horiz_atti_feedback_q3*horiz_atti_feedback_q3))/3.1415926*180
+
+[config]
+name   ctrl_ccpm
+type   53
+
+float       dyn_ccpm_raw_lift
+float       dyn_ccpm_raw_tilt_x
+float       dyn_ccpm_raw_tilt_y
+float       dyn_ccpm_raw_torsion
+
+float       dyn_ccpm_fix_lift
+float       dyn_ccpm_fix_tilt_x
+float       dyn_ccpm_fix_tilt_y
+float       dyn_ccpm_fix_torsion
+
+float       dyn_ccpm_fix_lift_scale
+float       dyn_ccpm_fix_tilt_scale
+float       dyn_ccpm_fix_torsion_scale
+
+float       dyn_ccpm_saturation_value
+uint8_t     dyn_ccpm_saturation_flag
+
+[config]
+name   ctrl_motor 
+type   54
+
+uint8_t 	horiz_motor_status
+uint8_t     	horiz_motor_cmd_id
+uint8_t     	horiz_motor_feedback_id
+uint16_t 	thrust_1
+uint16_t 	thrust_2
+uint16_t 	thrust_3
+uint16_t 	thrust_4
+uint16_t 	thrust_5
+uint16_t 	thrust_6
+uint16_t 	thrust_7
+uint16_t 	thrust_8
+uint16_t 	pwm_1
+uint16_t 	pwm_2
+uint16_t 	pwm_3
+uint16_t 	pwm_4
+uint16_t 	pwm_5
+uint16_t 	pwm_6
+uint16_t 	pwm_7
+uint16_t 	pwm_8
+
+[config]
+name   wp_curve 
+type   150
+
+float 		px
+float   	py
+float   	pz
+float 		vx
+float   	vy
+float   	vz
+float		v_norm
+float 		T
+uint8_t		wp_state
+
+
+[config]
+name   smart_battery_info 
+type   18
+
+uint16_t rest_time
+uint16_t need_time_for_gohome
+uint16_t need_time_for_land
+uint16_t gohome_battery_level
+uint16_t land_battery_level
+float    radius_for_gohome
+uint16_t request_gohome
+float    bat_dec_speed
+uint32_t smart_battery_state
+
+uint8_t  level1_over_current
+uint8_t  level2_over_current
+uint8_t  level1_over_temp
+uint8_t  level2_under_temp
+uint8_t  level1_low_temp
+uint8_t  level2_low_temp
+uint8_t  short_cir
+uint8_t  low_vol_cells
+uint8_t  damage_cells
+uint8_t  exchange_cells
+
+uint8_t		user_gohome_level
+uint8_t		user_land_level
+uint8_t		user_action_for_gohome
+uint8_t		user_action_for_land
+uint8_t		user_use_smart_bat
+
+uint8_t        flag_main_vol_low_gohome
+uint8_t        flag_main_vol_low_land
+uint8_t        flag_user_gohome
+uint8_t        flag_user_land
+uint8_t        flag_smart_bat_gohome
+uint8_t        flag_smart_bat_land
+uint8_t        flag_cell_err
+uint8_t        flag_communite_err
+float          real_desc_speed
+uint8_t        flag_vol_very_low
+uint8_t        flag_temp_and_vol_low
+uint8_t        flag_first_charge_not_full
+
+float			g_filter_vol
+float			g_filter_I
+float			g_evl_vol
+float			g_delt_I
+
+
+[config]
+name   airport_limit_data
+type   40
+uint8_t area_state
+uint8_t action_state
+uint8_t work_point_num
+
+int32_t lat_int_0
+int32_t lon_int_0
+uint8_t point_from_where_0
+uint8_t	flag_limit_radius_0
+uint8_t	flag_limit_hi_0
+float	d2limit_edge_0
+float	d2limit_hi_0
+float	directx_0
+float	directy_0
+
+int32_t lat_int_1
+int32_t lon_int_1
+uint8_t point_from_where_1
+uint8_t	flag_limit_radius_1
+uint8_t	flag_limit_hi_1
+float	d2limit_edge_1
+float	d2limit_hi_1
+float	directx_1
+float	directy_1
+
+int32_t lat_int_2
+int32_t lon_int_2
+uint8_t point_from_where_2
+uint8_t	flag_limit_radius_2
+uint8_t	flag_limit_hi_2
+float	d2limit_edge_2
+float	d2limit_hi_2
+float	directx_2
+float	directy_2
+
+[config]
+name   fmu_device_run_time
+type   41
+uint32_t battery
+uint32_t led
+uint32_t baromter
+uint32_t gyro_acc
+uint32_t imu
+uint32_t vo
+uint32_t ultrasonic
+uint32_t pmu
+uint32_t esc
+uint32_t mc
+uint32_t camera
+uint32_t gps
+uint32_t Compass
+uint32_t gimbal
+uint32_t rc
+uint32_t gear
+
+[config]
+name   hp_data
+type   42
+float  tgt_hp_alti
+float  tgt_ang_rate
+float  tgt_radius
+float  distance_to_hp
+float  cosine_angle
+float  angle_rate
+float  radius
+float  pos_error_x
+float  pos_error_y
+float  pos_error_z
+float  vel_error_x
+float  vel_error_y
+float  vel_error_z
+float  head_error
+
+[config]
+name  hl_data
+type  44
+float tgt_radial_vel
+float tgt_tangential_vel
+float real_radial_vel
+float real_tangential_vel
+
+[config]
+name   follow_me_data
+type   43
+float  heading_ref
+float  heading_error
+float  heading_rate
+
+float  ascending_tgt_height
+float  ascending_error
+float  ascending_vel
+
+double  phone_tagt_x
+double  phone_tagt_y
+
+double  quadrotor_cur_x
+double  quadrotor_cur_y
+
+float quadrotor2phone_offset_x
+float quadrotor2phone_offset_y
+
+float quadrotor2phone_distance
+
+float quadrotor2targetpoint_offset_x
+float quadrotor2targetpoint_offset_y
+
+float quadrotor2targetpoint_distance
+
+float tagt_vel_x
+float tagt_vel_y
+
+float cur_vel_x
+float cur_vel_y
+
+float cruise_vel_x
+float cruise_vel_y
+
+float fixed_offset_x
+float fixed_offset_y
+
+float fixed_distance_offset
+
+float dist_drone2drone
+float dist_phone2phone
+
+float gimbal_ptich_tgt
+float gimbal_pitch_error
+float gimbal_pitch_rate
+
+uint8_t in_height_limit
+uint8_t target_loss_count
+uint8_t mission_status
+
+[config]
+name   imu_data_status 
+type   19
+    uint8_t 	start_fan
+    uint8_t  	led_status
+
+
+[config]
+name   aircraft_condition_monitor 
+type   70
+
+uint8_t		craft_flight_mode
+
+uint8_t		near_gnd_state
+
+float		launch_acc_duration
+float		launch_delta_v
+uint8_t		launch_state
+
+float       	thrust_proj_gnd
+float       	thrust_proj_gnd_compen
+float       	thrust_compensator
+float       	hover_thrust
+float       	dynamic_thrust
+float       	cos_safe_tilt
+float       	safe_tilt
+
+
+[config]
+name   aircraft_model 
+type   80
+
+float		m1_current
+float		m1_w
+float		m1_lift
+float		m1_torque
+
+float		m2_current
+float		m2_w
+float		m2_lift
+float		m2_torque
+
+float		m3_current
+float		m3_w
+float		m3_lift
+float		m3_torque
+
+float		m4_current
+float		m4_w
+float		m4_lift
+float		m4_torque
+
+float		m5_current
+float		m5_w
+float		m5_lift
+float		m5_torque
+
+float		m6_current
+float		m6_w
+float		m6_lift
+float		m6_torque
+
+float		m7_current
+float		m7_w
+float		m7_lift
+float		m7_torque
+
+float		m8_current
+float		m8_w
+float		m8_lift
+float		m8_torque
+
+
+[config]
+name   go_home_info
+type   90
+
+uint8_t		go_home_stage
+float		go_home_timer
+float		dis_to_home_x
+float		dis_to_home_y
+
+expr   E_dis_to_home	sqrt(dis_to_home_x*dis_to_home_x+dis_to_home_y*dis_to_home_y)
+
+
+
+
+[config]
+name   new_mvo_feedback 
+type   29	
+
+uint16_t visionObservationCount
+int16_t  Vel_X
+int16_t  Vel_Y
+int16_t  Vel_Z
+
+float    Pos_X
+float    Pos_Y
+float    Pos_Z
+
+float hoverPointUncertainty1
+float hoverPointUncertainty2
+float hoverPointUncertainty3
+float hoverPointUncertainty4
+float hoverPointUncertainty5
+float hoverPointUncertainty6
+
+float velocityUncertainty1
+float velocityUncertainty2
+float velocityUncertainty3
+float velocityUncertainty4
+float velocityUncertainty5
+float velocityUncertainty6
+
+float height
+float heightUncertainty
+
+uint8_t reserved1
+uint8_t reserved2
+uint8_t reserved3
+uint8_t reserved4
+
+expr E_new_mvo_px_flag   bitand(shift_r(reserved1,4),1)
+expr E_new_mvo_py_flag   bitand(shift_r(reserved1,5),1)
+expr E_new_mvo_pz_flag   bitand(shift_r(reserved1,6),1)
+expr E_new_mvo_vx_flag   bitand(shift_r(reserved1,0),1)
+expr E_new_mvo_vy_flag   bitand(shift_r(reserved1,1),1)
+expr E_new_mvo_vz_flag   bitand(shift_r(reserved1,2),1)
+
+
+[config]
+name   svo_avoid_obstacle
+type   100	
+
+uint8_t     	svo_avoid_raw_flag
+uint16_t     	svo_avoid_raw_front_0
+uint16_t     	svo_avoid_raw_front_1
+uint16_t     	svo_avoid_raw_front_2
+uint16_t     	svo_avoid_raw_right_0
+uint16_t     	svo_avoid_raw_right_1
+uint16_t     	svo_avoid_raw_right_2
+uint16_t     	svo_avoid_raw_back_0
+uint16_t     	svo_avoid_raw_back_1
+uint16_t     	svo_avoid_raw_back_2
+uint16_t     	svo_avoid_raw_left_0
+uint16_t     	svo_avoid_raw_left_1
+uint16_t     	svo_avoid_raw_left_2
+uint8_t     	svo_avoid_raw_v_limit
+uint8_t     	svo_avoid_raw_cnt
+
+expr E_svo_stop_flag   	bitand(shift_r(SVO_stop_flag,0),1)
+expr E_svo_work_flag    bitand(shift_r(SVO_stop_flag,1),1)
+expr E_svo_en_flag      bitand(shift_r(SVO_stop_flag,2),1)
+expr E_svo_front_flag   bitand(shift_r(SVO_stop_flag,4),1)
+expr E_svo_right_flag   bitand(shift_r(SVO_stop_flag,5),1)
+expr E_svo_back_flag    bitand(shift_r(SVO_stop_flag,6),1)
+expr E_svo_left_flag    bitand(shift_r(SVO_stop_flag,7),1)
+
+[config]
+name   rtkData
+type   53233
+int32_t     Lat
+int32_t     Lon
+int32_t     Height    
+uint16_t    satNum
+uint16_t    posType
+int32_t     reserve1
+int32_t     reserve2
+int32_t     reserve3
+int32_t     reserve4
+int32_t     reserve5
+int32_t     reserve6
+int32_t     reserve7
+int32_t     reserve8
+int32_t     reserve9
+int32_t     reserve10
+uint32_t    cntRTK
+
+[config]
+name	        V2_DECODE_00
+type	        2304
+uint16_t byte_in_00
+uint16_t packet_v0_count_00
+uint16_t packet_v1_count_00
+uint16_t head_serch_err_00
+uint16_t head_idx_err_00
+uint16_t head_len_err_00
+uint16_t head_crc_err_00
+uint16_t data_len_err_00
+uint16_t data_crc_err_00
+
+[config]
+name	        V2_DECODE_01
+type	        2305
+uint16_t byte_in_01
+uint16_t packet_v0_count_01
+uint16_t packet_v1_count_01
+uint16_t head_serch_err_01
+uint16_t head_idx_err_01
+uint16_t head_len_err_01
+uint16_t head_crc_err_01
+uint16_t data_len_err_01
+uint16_t data_crc_err_01
+
+[config]
+name	        V2_DECODE_02
+type	        2306
+uint16_t byte_in_02
+uint16_t packet_v0_count_02
+uint16_t packet_v1_count_02
+uint16_t head_serch_err_02
+uint16_t head_idx_err_02
+uint16_t head_len_err_02
+uint16_t head_crc_err_02
+uint16_t data_len_err_02
+uint16_t data_crc_err_02
+
+[config]
+name	        V2_DECODE_03
+type	        2307
+uint16_t byte_in_03
+uint16_t packet_v0_count_03
+uint16_t packet_v1_count_03
+uint16_t head_serch_err_03
+uint16_t head_idx_err_03
+uint16_t head_len_err_03
+uint16_t head_crc_err_03
+uint16_t data_len_err_03
+uint16_t data_crc_err_03
+
+[config]
+name	        V2_DECODE_04
+type	        2308
+uint16_t byte_in_04
+uint16_t packet_v0_count_04
+uint16_t packet_v1_count_04
+uint16_t head_serch_err_04
+uint16_t head_idx_err_04
+uint16_t head_len_err_04
+uint16_t head_crc_err_04
+uint16_t data_len_err_04
+uint16_t data_crc_err_04
+
+[config]
+name	        V2_DECODE_05
+type	        2309
+uint16_t byte_in_05
+uint16_t packet_v0_count_05
+uint16_t packet_v1_count_05
+uint16_t head_serch_err_05
+uint16_t head_idx_err_05
+uint16_t head_len_err_05
+uint16_t head_crc_err_05
+uint16_t data_len_err_05
+uint16_t data_crc_err_05
+
+
+
+[config]
+name	        V2_DECODE_06
+type	        2310
+uint16_t byte_in_06
+uint16_t packet_v0_count_06
+uint16_t packet_v1_count_06
+uint16_t head_serch_err_06
+uint16_t head_idx_err_06
+uint16_t head_len_err_06
+uint16_t head_crc_err_06
+uint16_t data_len_err_06
+uint16_t data_crc_err_06
+
+
+
+[config]
+name	        V2_DECODE_07
+type	        2311
+uint16_t byte_in_07
+uint16_t packet_v0_count_07
+uint16_t packet_v1_count_07
+uint16_t head_serch_err_07
+uint16_t head_idx_err_07
+uint16_t head_len_err_07
+uint16_t head_crc_err_07
+uint16_t data_len_err_07
+uint16_t data_crc_err_07
+
+
+
+[config]
+name	        V2_DECODE_08
+type	        2312
+uint16_t byte_in_08
+uint16_t packet_v0_count_08
+uint16_t packet_v1_count_08
+uint16_t head_serch_err_08
+uint16_t head_idx_err_08
+uint16_t head_len_err_08
+uint16_t head_crc_err_08
+uint16_t data_len_err_08
+uint16_t data_crc_err_08
+
+
+
+[config]
+name	        V2_DECODE_09
+type	        2313
+uint16_t byte_in_09
+uint16_t packet_v0_count_09
+uint16_t packet_v1_count_09
+uint16_t head_serch_err_09
+uint16_t head_idx_err_09
+uint16_t head_len_err_09
+uint16_t head_crc_err_09
+uint16_t data_len_err_09
+uint16_t data_crc_err_09
+
+
+
+[config]
+name	        V2_DECODE_10
+type	        2314
+uint16_t byte_in_10
+uint16_t packet_v0_count_10
+uint16_t packet_v1_count_10
+uint16_t head_serch_err_10
+uint16_t head_idx_err_10
+uint16_t head_len_err_10
+uint16_t head_crc_err_10
+uint16_t data_len_err_10
+uint16_t data_crc_err_10
+
+
+
+[config]
+name	        V2_DECODE_11
+type	        2315
+uint16_t byte_in_11
+uint16_t packet_v0_count_11
+uint16_t packet_v1_count_11
+uint16_t head_serch_err_11
+uint16_t head_idx_err_11
+uint16_t head_len_err_11
+uint16_t head_crc_err_11
+uint16_t data_len_err_11
+uint16_t data_crc_err_11
+
+
+
+[config]
+name	        V2_DECODE_12
+type	        2316
+uint16_t byte_in_12
+uint16_t packet_v0_count_12
+uint16_t packet_v1_count_12
+uint16_t head_serch_err_12
+uint16_t head_idx_err_12
+uint16_t head_len_err_12
+uint16_t head_crc_err_12
+uint16_t data_len_err_12
+uint16_t data_crc_err_12
+
+
+
+[config]
+name	        V2_DECODE_13
+type	        2317
+uint16_t byte_in_13
+uint16_t packet_v0_count_13
+uint16_t packet_v1_count_13
+uint16_t head_serch_err_13
+uint16_t head_idx_err_13
+uint16_t head_len_err_13
+uint16_t head_crc_err_13
+uint16_t data_len_err_13
+uint16_t data_crc_err_13
+
+
+[config]
+name	        V2_DECODE_14
+type	        2318
+uint16_t byte_in_14
+uint16_t packet_v0_count_14
+uint16_t packet_v1_count_14
+uint16_t head_serch_err_14
+uint16_t head_idx_err_14
+uint16_t head_len_err_14
+uint16_t head_crc_err_14
+uint16_t data_len_err_14
+uint16_t data_crc_err_14
+
+
+[config]
+name	        V2_DECODE_15
+type	        2319
+uint16_t byte_in_14
+uint16_t packet_v0_count_15
+uint16_t packet_v1_count_15
+uint16_t head_serch_err_15
+uint16_t head_idx_err_15
+uint16_t head_len_err_15
+uint16_t head_crc_err_15
+uint16_t data_len_err_15
+uint16_t data_crc_err_15
+
+
+
+[config]
+name	        STM32_CAN_00
+type	        2336
+uint16_t tx_in_00  
+uint16_t tx_ok_00   
+uint16_t tx_alst_00
+uint16_t tx_terr_00
+uint16_t rx0_in_00
+uint16_t rx0_over_00
+uint16_t rx1_in_00
+uint16_t rx1_over_00
+uint16_t rx_err_00
+
+[config]
+name	        STM32_CAN_01
+type	        2337
+uint16_t tx_in_01  
+uint16_t tx_ok_01   
+uint16_t tx_alst_01
+uint16_t tx_terr_01
+uint16_t rx0_in_01
+uint16_t rx0_over_01
+uint16_t rx1_in_01
+uint16_t rx1_over_01
+uint16_t rx_err_01
+
+[config]
+name	        STM32_UART_00
+type	        2338
+uint16_t tx_fifo_in_00 
+uint16_t tx_fifo_out_00                       
+uint16_t rx_fifo_in_00   
+uint16_t rx_fifo_over_00                        
+uint16_t rx_buf_over_00  
+
+[config]
+name	        STM32_UART_01
+type	        2339
+uint16_t tx_fifo_in_01 
+uint16_t tx_fifo_out_01                       
+uint16_t rx_fifo_in_01   
+uint16_t rx_fifo_over_01                        
+uint16_t rx_buf_over_01  
+
+[config]
+name	        STM32_UART_02
+type	        2340
+uint16_t tx_fifo_in_02 
+uint16_t tx_fifo_out_02                       
+uint16_t rx_fifo_in_02   
+uint16_t rx_fifo_over_02                        
+uint16_t rx_buf_over_02  
+
+[config]
+name	        STM32_UART_03
+type	        2341
+uint16_t tx_fifo_in_03 
+uint16_t tx_fifo_out_03                       
+uint16_t rx_fifo_in_03   
+uint16_t rx_fifo_over_03                        
+uint16_t rx_buf_over_03  
+
+[config]
+name	        STM32_UART_04
+type	        2342
+uint16_t tx_fifo_in_04 
+uint16_t tx_fifo_out_04                       
+uint16_t rx_fifo_in_04   
+uint16_t rx_fifo_over_04                        
+uint16_t rx_buf_over_04  
+
+[config]
+name	        STM32_UART_05
+type	        2343
+uint16_t tx_fifo_in_05 
+uint16_t tx_fifo_out_05                       
+uint16_t rx_fifo_in_05   
+uint16_t rx_fifo_over_05                        
+uint16_t rx_buf_over_05  
+
+[config]
+name	        STM32_UART_06
+type	        2344
+uint16_t tx_fifo_in_06 
+uint16_t tx_fifo_out_06                       
+uint16_t rx_fifo_in_06   
+uint16_t rx_fifo_over_06                        
+uint16_t rx_buf_over_06  
+
+[config]
+name	        STM32_UART_07
+type	        2345
+uint16_t tx_fifo_in_07 
+uint16_t tx_fifo_out_07                       
+uint16_t rx_fifo_in_07   
+uint16_t rx_fifo_over_07                        
+uint16_t rx_buf_over_07 
+
+[config]
+name	        STM32_UART_08
+type	        2346
+uint16_t tx_fifo_in_08 
+uint16_t tx_fifo_out_08                       
+uint16_t rx_fifo_in_08   
+uint16_t rx_fifo_over_08                        
+uint16_t rx_buf_over_08  
+
+
+[config]
+name   gear_debug_info
+type   110	
+
+uint8_t gear_mode
+uint8_t gear_state
+uint8_t gear_cmd
+uint8_t gear_speed
+uint32_t gear_counter
+
+uint8_t gear_pack_flag
+uint8_t gear_pack_req
+uint8_t gear_pack_type
+uint8_t gear_pack_state
+uint8_t gear_pack_manual_cmd
+
+uint8_t gear_rc_cmd
+
+uint8_t gear_app_req
+uint8_t gear_app_cmd
+
+int16_t gear_rc_raw_input
+
+
+[config]
+name   svo_ctrl_debug
+type   102	
+
+uint8_t svo_avoid_debug0_limit_en
+float   svo_avoid_debug0_d_craft2edge
+float   svo_avoid_debug0_limit_direct_0
+float	svo_avoid_debug0_limit_direct_1
+float   svo_avoid_debug0_limit_norm
+float   svo_avoid_debug0_damping_scale
+
+uint8_t svo_avoid_debug1_limit_en
+float   svo_avoid_debug1_d_craft2edge
+float   svo_avoid_debug1_limit_direct_0
+float	svo_avoid_debug1_limit_direct_1
+float   svo_avoid_debug1_limit_norm
+float   svo_avoid_debug1_damping_scale
+
+uint8_t svo_avoid_debug2_limit_en
+float   svo_avoid_debug2_d_craft2edge
+float   svo_avoid_debug2_limit_direct_0
+float	svo_avoid_debug2_limit_direct_1
+float   svo_avoid_debug2_limit_norm
+float   svo_avoid_debug2_damping_scale
+
+uint8_t svo_avoid_debug3_limit_en
+float   svo_avoid_debug3_d_craft2edge
+float   svo_avoid_debug3_limit_direct_0
+float	svo_avoid_debug3_limit_direct_1
+float   svo_avoid_debug3_limit_norm
+float   svo_avoid_debug3_damping_scale
+
+[config]
+name   waypoint_debug
+type   160	
+
+uint8_t 	wp_mission_status
+uint8_t 	wp_cur_num
+uint16_t	wp_tgt_vel
+uint8_t     	wp_traj_type
+uint16_t    	wp_T
+float    	wp_debug_target_P_x
+float    	wp_debug_target_P_y
+float    	wp_debug_target_P_z
+float		wp_debug_target_V_x
+float		wp_debug_target_V_y
+float		wp_debug_target_V_z
+float 		wp_debug_feedback_P_x
+float 		wp_debug_feedback_P_y
+float 		wp_debug_feedback_P_z
+uint8_t	        wp_debug_damping_scale
+
+expr  E_gps_lat				(gps_lat-225400000)/10000000*3.1415926/180*6370000
+expr  E_gps_lon				(gps_lon-1139468000)/10000000*3.1415926/180*6370000*cos(0.3933972)
+
+expr  E_atti_lat				(lati-0.3933972)*6370000
+expr  E_atti_lon				(longti-1.9887468)*6370000*cos(0.3933972)
+
+
+expr	NEG_mvo_vx		(Vel_X/1000*cos(E_yaw*3.1415926/180)+Vel_Y/1000*sin(-E_yaw*3.1415926/180))
+expr	NEG_mvo_vy		(Vel_X/1000*sin(E_yaw*3.1415926/180)+Vel_Y/1000*cos(E_yaw*3.1415926/180))
+expr	NEG_mvo_vz		Vel_Z/1000   
+
+expr    E_acc_norm             sqrt(acc_x^2+acc_y^2+acc_z^2)
+expr  E_horizon_speed          sqrt(vg_x^2+vg_y^2)     

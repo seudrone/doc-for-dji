@@ -1,0 +1,12 @@
+[FILE_LIST]
+1\FilePath=/app.asar
+1\FileHash=be4c65bf65437ca7c5a2b9d9e7f82c5bb8eff077
+2\FilePath=/main.js
+2\FileHash=6a80b0b51e56fd270a1ab987f7b4cce7e123656e
+3\FilePath=/package.json
+3\FileHash=99f70f66c5153bf7e99b3a61f915946394698107
+size=3
+
+[PACK_INFO]
+PackHash=8f65ac1283b56a9d6016741a9abb0a283a34dac2
+PackTime=20160302185827

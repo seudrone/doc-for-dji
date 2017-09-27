@@ -1,0 +1,35 @@
+// phong3SG genrated by blender2ogre 0.6.0
+
+material phong3SG 
+{
+    receive_shadows on 
+
+    technique
+    {
+        pass phong3SG
+        {
+            ambient 0.10999999940395355 0.10999999940395355 0.10999999940395355 0.0
+            diffuse 0.08800000083446502 0.08800000083446502 0.08800000083446502 0.0
+            specular 0.25 0.25 0.25 0.0 2.25
+            emissive 0.0 0.0 0.0 0.0
+
+            alpha_to_coverage off
+            colour_write on
+            cull_hardware clockwise
+            depth_check on
+            depth_func less_equal
+            depth_write on
+            illumination_stage 
+            light_clip_planes off
+            light_scissor off
+            lighting on
+            normalise_normals off
+            polygon_mode solid
+            scene_blend one zero
+            scene_blend_op add
+            shading gouraud
+            transparent_sorting on
+
+        }
+    }
+}
